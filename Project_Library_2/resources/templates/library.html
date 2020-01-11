@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
+</head>
+<body>
+<header>
+    <h1>Library</h1>
+</header>
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+    </tr>
+    <th:block th:each="book : ${books}">
+        <tr>
+            <td class="number" th:text="${book.id}">...</td>
+            <td class="text" th:text="${book.title}">...</td>
+            <td class="text" th:text="${book.author}">...</td>
+            <td class="text" th:text="${book.description}">...</td>
+        </tr>
+    </th:block>
+
+</table>
+
+<p><button id = "hi"> Активация alert </button></p>
+<p><button id = "showAuthors" onclick="showAuthors()" > Authors </button></p>
+<script>
+    $('#hi').click(function () {
+        alert("Hello, World");
+    });
+</script>
+</body>
+</html>
