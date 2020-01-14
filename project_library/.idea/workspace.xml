@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VQW5CBoKTPL7J24WFNUuCUCdkf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Some_programs\JAVA\prIfvDdmvdW,fdk_XXXX\src\com\netcracker" />
+      <recent name="D:\Some_programs\JAVA\project_X\resources\templates" />
+      <recent name="D:\Some_programs\JAVA\project_X\resources" />
+      <recent name="D:\Some_programs\JAVA\project_X" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.netcracker" />
+      <recent name="com.netcracker.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Some_programs\JAVA\prIfvDdmvdW,fdk_XXXX\resources\templates" />
+      <recent name="D:\Some_programs\JAVA\project_X\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SpringBootStarter">
+    <configuration name="SpringBootStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.netcracker.SpringBootStarter" />
+      <module name="project_library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlingFormSubmissionApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="prIfvDdmvdW,fdk_XXXX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.HandlingFormSubmissionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlingFormSubmissionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="project_X" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.HandlingFormSubmissionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HandlingFormSubmissionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="prIfvDdmvdW,fdk_XXXX" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.HandlingFormSubmissionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootStarter (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Project_Library_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.SpringBootStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Project_Library_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.SpringBootStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Project_Library_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.SpringBootStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="project_X" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.SpringBootStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootStarter" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Project_Library_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.netcracker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.SpringBootStarter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SpringBootStarter" />
+        <item itemvalue="Spring Boot.SpringBootStarter (1)" />
+        <item itemvalue="Spring Boot.SpringBootStarter" />
+        <item itemvalue="Spring Boot.SpringBootStarter" />
+        <item itemvalue="Spring Boot.SpringBootStarter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="" />
+      <created>1577185614123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577185614123</updated>
+      <workItem from="1577185618953" duration="3265000" />
+      <workItem from="1577231786776" duration="1205000" />
+      <workItem from="1578436038818" duration="3873000" />
+      <workItem from="1578440214837" duration="784000" />
+      <workItem from="1578470245185" duration="588000" />
+      <workItem from="1578471622137" duration="2275000" />
+      <workItem from="1578559472309" duration="306000" />
+      <workItem from="1578560578704" duration="2873000" />
+      <workItem from="1578653403335" duration="4082000" />
+      <workItem from="1578692212082" duration="11199000" />
+      <workItem from="1579001330183" duration="137000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="309" y="27" key="#HandlingFormSubmissionApplication" timestamp="1578470423484">
+      <screen x="0" y="0" width="1293" height="768" />
+    </state>
+    <state x="309" y="27" key="#HandlingFormSubmissionApplication/0.0.1293.768@0.0.1293.768" timestamp="1578470423484" />
+    <state x="451" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1578470568516">
+      <screen x="0" y="0" width="1293" height="768" />
+    </state>
+    <state x="451" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1293.768@0.0.1293.768" timestamp="1578470568516" />
+    <state x="381" y="139" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578698560967">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state x="381" y="139" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1295.768@0.0.1295.768" timestamp="1578698560967" />
+    <state x="426" y="141" key="FileChooserDialogImpl" timestamp="1578436150110">
+      <screen x="0" y="0" width="1293" height="768" />
+    </state>
+    <state x="426" y="141" key="FileChooserDialogImpl/0.0.1293.768@0.0.1293.768" timestamp="1578436150110" />
+    <state width="1253" height="127" key="GridCell.Tab.0.bottom" timestamp="1579001501050">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.0.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="127" key="GridCell.Tab.0.bottom/0.0.1295.768@0.0.1295.768" timestamp="1579001501050" />
+    <state width="1253" height="127" key="GridCell.Tab.0.center" timestamp="1579001501050">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.0.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="127" key="GridCell.Tab.0.center/0.0.1295.768@0.0.1295.768" timestamp="1579001501050" />
+    <state width="1253" height="127" key="GridCell.Tab.0.left" timestamp="1579001501050">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.0.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="127" key="GridCell.Tab.0.left/0.0.1295.768@0.0.1295.768" timestamp="1579001501050" />
+    <state width="1253" height="127" key="GridCell.Tab.0.right" timestamp="1579001501050">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.0.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="127" key="GridCell.Tab.0.right/0.0.1295.768@0.0.1295.768" timestamp="1579001501050" />
+    <state width="1253" height="111" key="GridCell.Tab.1.bottom" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.1.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
+    <state width="1253" height="111" key="GridCell.Tab.1.bottom/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.1.center" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.1.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="111" key="GridCell.Tab.1.center/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.1.left" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.1.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="111" key="GridCell.Tab.1.left/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.1.right" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.1.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
+    <state width="1253" height="111" key="GridCell.Tab.1.right/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.2.bottom" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.2.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
+    <state width="1253" height="111" key="GridCell.Tab.2.bottom/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.2.center" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.2.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
+    <state width="1253" height="111" key="GridCell.Tab.2.center/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.2.left" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.2.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
+    <state width="1253" height="111" key="GridCell.Tab.2.left/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state width="1253" height="111" key="GridCell.Tab.2.right" timestamp="1578703851992">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state width="1249" height="89" key="GridCell.Tab.2.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
+    <state width="1253" height="111" key="GridCell.Tab.2.right/0.0.1295.768@0.0.1295.768" timestamp="1578703851992" />
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1579001327513">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state x="354" y="210" key="com.intellij.ide.util.TipDialog/0.0.1293.768@0.0.1293.768" timestamp="1578470245784" />
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog/0.0.1295.768@0.0.1295.768" timestamp="1579001327513" />
+    <state x="326" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577186143872">
+      <screen x="0" y="0" width="1293" height="768" />
+    </state>
+    <state x="326" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1293.768@0.0.1293.768" timestamp="1577186143872" />
+    <state x="309" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577231995992">
+      <screen x="0" y="0" width="1293" height="768" />
+    </state>
+    <state x="309" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1293.768@0.0.1293.768" timestamp="1577231995992" />
+  </component>
+</project>
