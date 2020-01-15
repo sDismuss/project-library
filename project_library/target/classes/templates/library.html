@@ -27,12 +27,9 @@
 
 </table>
 
-<p><button id = "hi"> Активация alert </button></p>
-<p><button id = "showAuthors" onclick="showAuthors()" > Authors </button></p>
-<script>
-    $('#hi').click(function () {
-        alert("Hello, World");
-    });
-</script>
+<p><button id = "hi"> Activate alert </button></p>
+<p><button id = "showAuthors" > Show authors </button></p>
+<script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
+<div id = "authors" style = "background-color:#eee;"> </div>
 </body>
 </html>
