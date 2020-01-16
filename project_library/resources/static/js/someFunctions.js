@@ -4,7 +4,7 @@ $(document).ready(function() {
     });
 
     $('#showAuthors').click(function () {
-        $.getJSON('/api/authors.json', function(jd) {
+        $.getJSON('/api/authors', function(jd) {
             let i = 0;
             $('#authors').html('<p> Authors </p>');
             while(i < jd.length) {
