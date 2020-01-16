@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class APIController {
 
-    @GetMapping("/api/authors.json")
+    @GetMapping("/api/authors")
     public List<Author> getAuthors(){
         List<Author> authors = new ArrayList<Author>();
         authors.add(new Author("1","Пушкин"));
