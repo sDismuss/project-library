@@ -2,26 +2,30 @@ package com.netcracker.model;
 
 
 public class Book {
-    private int id;
+    private String id;
     private String title;
     private String author;
     private String description;
+    private String rating;
+    private String cost;
 
     public Book() {
     }
 
-    public Book(int id, String title, String author, String description) {
+    public Book(String id, String title, String author, String description, String rating, String cost) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
+        this.rating = rating;
+        this.cost = cost;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -49,21 +53,44 @@ public class Book {
         this.description = description;
     }
 
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Book)) { return false; }  //or use getClass()
+        if (!(o instanceof Book)) { return false; }
         Book book = (Book) o;
-        return book.id == id && book.title.equals(title) && book.author.equals(author) && book.description.equals(description);
+        return book.id.equals(id)
+                && book.title.equals(title)
+                && book.author.equals(author)
+                && book.description.equals(description)
+                && book.rating.equals(rating)
+                && book.cost.equals(cost);
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        result = 31 * result + (int) id;
+        result = 31 * result + id.hashCode();
         result = 31 * result + title.hashCode();
         result = 31 * result + author.hashCode();
         result = 31 * result + description.hashCode();
+        result = 31 * result + rating.hashCode();
+        result = 31 * result + cost.hashCode();
         return result;
     }
 
@@ -74,6 +101,8 @@ public class Book {
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", description='" + description + '\'' +
+                ", rating='" + rating + '\'' +
+                ", cost='" + cost + '\'' +
                 '}';
     }
 }

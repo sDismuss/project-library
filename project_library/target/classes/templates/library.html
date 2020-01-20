@@ -4,6 +4,7 @@
     <title>Library</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
+    <script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
 </head>
 <body>
 <header>
@@ -15,13 +16,15 @@
         <th>Title</th>
         <th>Author</th>
         <th>Description</th>
+        <th>Link</th>
     </tr>
     <th:block th:each="book : ${books}">
         <tr>
-            <td class="number" th:text="${book.id}">...</td>
+            <td class="text" th:text="${book.id}">...</td>
             <td class="text" th:text="${book.title}">...</td>
             <td class="text" th:text="${book.author}">...</td>
             <td class="text" th:text="${book.description}">...</td>
+            <td><a th:href="@{'/library/book/' + ${book.id}}">Watch more...</a></td>
         </tr>
     </th:block>
 
@@ -29,7 +32,6 @@
 
 <p><button id = "hi"> Activate alert </button></p>
 <p><button id = "showAuthors" > Show authors </button></p>
-<script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
 <div id = "authors" style = "background-color:#eee;"> </div>
 </body>
 </html>
