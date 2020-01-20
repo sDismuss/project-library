@@ -1,8 +1,8 @@
+"use strict";
 $(document).ready(function() {
     $('#hi').click(function () {
         alert("Hello, World");
     });
-
     $('#showAuthors').click(function () {
         $.getJSON('/api/authors', function(jd) {
             let i = 0;
