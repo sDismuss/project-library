@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/SpringBootStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/SpringBootStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/SpringBootStarter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/SpringBootStarter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/model/Book.class" afterDir="false" />
-    </list>
+    <list default="true" id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,7 +238,7 @@
       <workItem from="1579520262099" duration="12107000" />
       <workItem from="1579608442313" duration="2013000" />
       <workItem from="1579645656603" duration="580000" />
-      <workItem from="1579860327278" duration="6693000" />
+      <workItem from="1579860327278" duration="6952000" />
     </task>
     <servers />
   </component>
