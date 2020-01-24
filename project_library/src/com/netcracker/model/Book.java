@@ -1,24 +1,29 @@
 package com.netcracker.model;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String title;
     private String author;
     private String description;
     private String rating;
-    private String cost;
+    private String book_cost;
 
     public Book() {
     }
 
-    public Book(String id, String title, String author, String description, String rating, String cost) {
+    public Book(String id, String title, String author, String description, String rating, String book_cost) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
         this.rating = rating;
-        this.cost = cost;
+        this.book_cost = book_cost;
     }
 
     public String getId() {
@@ -61,12 +66,12 @@ public class Book {
         this.rating = rating;
     }
 
-    public String getCost() {
-        return cost;
+    public String getBook_cost() {
+        return book_cost;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setBook_cost(String book_cost) {
+        this.book_cost = book_cost;
     }
 
     @Override
@@ -79,7 +84,7 @@ public class Book {
                 && book.author.equals(author)
                 && book.description.equals(description)
                 && book.rating.equals(rating)
-                && book.cost.equals(cost);
+                && book.book_cost.equals(book_cost);
     }
 
     @Override
@@ -90,7 +95,7 @@ public class Book {
         result = 31 * result + author.hashCode();
         result = 31 * result + description.hashCode();
         result = 31 * result + rating.hashCode();
-        result = 31 * result + cost.hashCode();
+        result = 31 * result + book_cost.hashCode();
         return result;
     }
 
@@ -102,7 +107,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", description='" + description + '\'' +
                 ", rating='" + rating + '\'' +
-                ", cost='" + cost + '\'' +
+                ", cost='" + book_cost + '\'' +
                 '}';
     }
 }
