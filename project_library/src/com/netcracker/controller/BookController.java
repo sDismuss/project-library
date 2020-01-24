@@ -18,7 +18,7 @@ public class BookController {
 
     @GetMapping("/library/book/{id}")
     public String bookForm(Model model, @PathVariable("id") String id){
-        model.addAttribute("book", getID(id));
+       model.addAttribute("book", getID(id));
         return "book";
     }
 
