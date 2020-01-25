@@ -1,11 +1,12 @@
 package com.netcracker.service;
 
+import com.netcracker.model.Author;
 import com.netcracker.model.Book;
+import com.netcracker.repository.AuthorRepository;
 import com.netcracker.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,21 +14,17 @@ import java.util.Optional;
 public class BookService {
     @Autowired
     private BookRepository bookRepository;
+    @Autowired
+    private AuthorService authorService;
 
     public List<Book> findAll(){
         return bookRepository.findAll();
     }
 
     public Book findById(String id){
-        try {
-            Optional<Book> optional = bookRepository.findById(id);
-            return optional.orElse(new Book());
+        Optional<Book> optional = bookRepository.findById(id);
+        return optional.orElse(null);
         }
-        catch(NullPointerException ex){
-            ex.printStackTrace();
-            return null;
-        }
-    }
 
     public List<Book> findByTitle(String title){
         return bookRepository.findByTitle(title);
@@ -43,6 +40,10 @@ public class BookService {
 
     public List<Book> getBooks() {
         List<Book> books = bookRepository.findAll();
+        for (Book book: books) {
+            Author author = authorService.findById(book.getAuthor());
+            book.setAuthor(author.getName());
+        }
         return books;
     }
 }

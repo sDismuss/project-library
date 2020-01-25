@@ -1,7 +1,7 @@
 package com.netcracker;
 
-import com.netcracker.model.Book;
-import com.netcracker.service.BookService;
+import com.netcracker.model.Author;
+import com.netcracker.service.AuthorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class SpringBootStarter implements CommandLineRunner{
     private static final Logger log = LoggerFactory.getLogger(SpringBootStarter.class);
 
     @Autowired
-    private BookService bookService;
+    private AuthorService authorService;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootStarter.class, args);
@@ -26,21 +26,25 @@ public class SpringBootStarter implements CommandLineRunner{
     @Override
     public void run(String... args) {
 
-        log.info("find all");
-        bookService.findAll().forEach(System.out::println);
 
         log.info("find by id");
-        System.out.println(bookService.findById("2"));
+        System.out.println(authorService.findById("2"));
+
+
+        log.info("find all");
+        authorService.findAll().forEach(System.out::println);
+
+
 
         log.info("find by title");
-        bookService.findByTitle("Mobil Book").forEach(System.out::println);
+        authorService.findByName("Mobil Book").forEach(System.out::println);
 
         log.info("save new book");
 
-        //bookService.save(new Book("4", "Mobil Book", "Gleb", "Just mobil book", "2.3", "10000000"));
+        authorService.save(new Author("4","Gleb"));
 
         log.info("retreive by title");
-        bookService.retrieveByTitle("Clever Book").forEach(System.out::println);
+        authorService.retrieveByName("Clever Book").forEach(System.out::println);
 
     }
 

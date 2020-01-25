@@ -1,5 +1,6 @@
 package com.netcracker.jdbc;
 
+import com.netcracker.model.Author;
 import com.netcracker.model.Book;
 
 import java.sql.*;

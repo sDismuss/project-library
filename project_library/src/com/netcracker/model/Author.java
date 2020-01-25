@@ -1,8 +1,17 @@
 package com.netcracker.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "authors")
 public class Author {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
+
+    public Author() {
+    }
 
     public Author(String id, String name) {
         this.id = id;
