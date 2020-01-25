@@ -19,8 +19,14 @@ public class BookService {
     }
 
     public Book findById(String id){
-        Optional<Book> optional = bookRepository.findById(id);
-        return optional.orElse(new Book());
+        try {
+            Optional<Book> optional = bookRepository.findById(id);
+            return optional.orElse(new Book());
+        }
+        catch(NullPointerException ex){
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public List<Book> findByTitle(String title){

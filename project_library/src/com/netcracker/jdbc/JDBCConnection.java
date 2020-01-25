@@ -44,7 +44,7 @@ public class JDBCConnection {
                 book.setAuthor(resultSet.getString("author"));
                 book.setDescription(resultSet.getString("description"));
                 book.setRating(resultSet.getString("rating"));
-                book.setBook_cost(resultSet.getString("book_cost"));
+                book.setCost(resultSet.getString("book_cost"));
                 books.add(book);
             }
 
