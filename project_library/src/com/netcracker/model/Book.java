@@ -13,17 +13,20 @@ public class Book {
     private String description;
     private String rating;
     private String cost;
+    private String image;
 
     public Book() {
     }
 
-    public Book(String id, String title, String author, String description, String rating, String cost) {
+
+    public Book(String id, String title, String author, String description, String rating, String cost, String image) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.description = description;
         this.rating = rating;
         this.cost = cost;
+        this.image = image;
     }
 
     public String getId() {
@@ -74,6 +77,14 @@ public class Book {
         this.cost = cost;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -84,7 +95,8 @@ public class Book {
                 && book.author.equals(author)
                 && book.description.equals(description)
                 && book.rating.equals(rating)
-                && book.cost.equals(cost);
+                && book.cost.equals(cost)
+                && book.image.equals(image);
     }
 
     @Override
@@ -96,6 +108,7 @@ public class Book {
         result = 31 * result + description.hashCode();
         result = 31 * result + rating.hashCode();
         result = 31 * result + cost.hashCode();
+        result = 31 * result + image.hashCode();
         return result;
     }
 
