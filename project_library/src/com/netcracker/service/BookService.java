@@ -4,6 +4,7 @@ import com.netcracker.model.Author;
 import com.netcracker.model.Book;
 import com.netcracker.repository.AuthorRepository;
 import com.netcracker.repository.BookRepository;
+import com.netcracker.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

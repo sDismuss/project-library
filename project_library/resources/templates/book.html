@@ -5,8 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
     <script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
-    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
-    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <script type = "application/javascript" th:src="@{/js/jquery.magnific-popup.js}"> </script>
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <header>
@@ -18,14 +19,10 @@
 <p th:text="'description: ' + ${book.description}" />
 <p th:text="'rating: ' + ${book.rating}" />
 <p th:text="'cost: ' + ${book.cost}" />
-<div class="parent-container">
-    <a href="https://wallbox.ru/wallpapers/main/201546/13dcd7162ea7a31.jpg">Open popup 1</a>
-    <a href="https://wallbox.ru/wallpapers/main/201546/13dcd7162ea7a31.jpg">Open popup 2</a>
-    <a href="https://wallbox.ru/wallpapers/main/201546/13dcd7162ea7a31.jpg">Open popup 3</a>
-</div>
-<!--
-<p><img th:src ="${book.image}" width="350" height="250"></p>
--->
+<p><div class="parent-container" >
+<i th:each="image : ${images}">
+    <a th:href="${image.link}"><img th:src ="${image.link}" width="150" height="100"></a>
+</i></div></p>
 <a href="/library">Return to the main page</a>
 </body>
 </html>

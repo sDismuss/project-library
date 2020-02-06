@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/css/magnific-popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/static/js/jquery.magnific-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/model/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/repository/ImageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/service/ImageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/static/js/someFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/static/js/someFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/someFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/someFunctions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,10 +37,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Class" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -251,6 +259,7 @@
       <workItem from="1580675543235" duration="1621000" />
       <workItem from="1580828863729" duration="766000" />
       <workItem from="1580880960333" duration="11444000" />
+      <workItem from="1580967812081" duration="11491000" />
     </task>
     <servers />
   </component>
@@ -266,11 +275,11 @@
       <screen x="0" y="0" width="1293" height="768" />
     </state>
     <state x="309" y="27" key="#HandlingFormSubmissionApplication/0.0.1293.768@0.0.1293.768" timestamp="1578470423484" />
-    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1580675947543">
+    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1580990394960">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="451" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1293.768@0.0.1293.768" timestamp="1578470568516" />
-    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1295.768@0.0.1295.768" timestamp="1580675947543" />
+    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1295.768@0.0.1295.768" timestamp="1580990394960" />
     <state x="243" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579946489332">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
@@ -288,26 +297,26 @@
     </state>
     <state x="426" y="141" key="FileChooserDialogImpl/0.0.1293.768@0.0.1293.768" timestamp="1578436150110" />
     <state x="427" y="141" key="FileChooserDialogImpl/0.0.1295.768@0.0.1295.768" timestamp="1579528219831" />
-    <state width="1253" height="127" key="GridCell.Tab.0.bottom" timestamp="1580908403776">
+    <state width="1253" height="127" key="GridCell.Tab.0.bottom" timestamp="1580993406918">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.bottom/0.0.1295.768@0.0.1295.768" timestamp="1580908403776" />
-    <state width="1253" height="127" key="GridCell.Tab.0.center" timestamp="1580908403776">
+    <state width="1253" height="127" key="GridCell.Tab.0.bottom/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
+    <state width="1253" height="127" key="GridCell.Tab.0.center" timestamp="1580993406918">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.center/0.0.1295.768@0.0.1295.768" timestamp="1580908403776" />
-    <state width="1253" height="127" key="GridCell.Tab.0.left" timestamp="1580908403776">
+    <state width="1253" height="127" key="GridCell.Tab.0.center/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
+    <state width="1253" height="127" key="GridCell.Tab.0.left" timestamp="1580993406918">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.left/0.0.1295.768@0.0.1295.768" timestamp="1580908403776" />
-    <state width="1253" height="127" key="GridCell.Tab.0.right" timestamp="1580908403776">
+    <state width="1253" height="127" key="GridCell.Tab.0.left/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
+    <state width="1253" height="127" key="GridCell.Tab.0.right" timestamp="1580993406918">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.right/0.0.1295.768@0.0.1295.768" timestamp="1580908403776" />
+    <state width="1253" height="127" key="GridCell.Tab.0.right/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
     <state width="1253" height="83" key="GridCell.Tab.1.bottom" timestamp="1579995718216">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
@@ -352,15 +361,19 @@
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="177" y="20" key="SettingsEditor/0.0.1295.768@0.0.1295.768" timestamp="1579085975027" />
-    <state x="355" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1580881007828">
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1580967811169">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="354" y="210" key="com.intellij.ide.util.TipDialog/0.0.1293.768@0.0.1293.768" timestamp="1578470245784" />
-    <state x="355" y="210" key="com.intellij.ide.util.TipDialog/0.0.1295.768@0.0.1295.768" timestamp="1580881007828" />
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog/0.0.1295.768@0.0.1295.768" timestamp="1580967811169" />
     <state x="326" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577186143872">
       <screen x="0" y="0" width="1293" height="768" />
     </state>
     <state x="326" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1293.768@0.0.1293.768" timestamp="1577186143872" />
+    <state x="477" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580985064910">
+      <screen x="0" y="0" width="1295" height="768" />
+    </state>
+    <state x="477" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1295.768@0.0.1295.768" timestamp="1580985064910" />
     <state x="364" y="25" key="refactoring.ChangeSignatureDialog" timestamp="1579994134947">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
