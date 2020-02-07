@@ -41,10 +41,12 @@ public class BookService {
 
     public List<Book> getBooks() {
         List<Book> books = bookRepository.findAll();
+        /* todo rework it. it is needed to use ManyToOne relation
+
         for (Book book: books) {
             Author author = authorService.findById(book.getAuthor());
             book.setAuthor(author.getName());
-        }
+        }*/
         return books;
     }
 }

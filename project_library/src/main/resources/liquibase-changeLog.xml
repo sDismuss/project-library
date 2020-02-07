@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1" author="developer">
+        <insert tableName="authors">
+            <column name="id">1</column>
+            <column name="name">Пушкин</column>
+        </insert>
+        <insert tableName="authors">
+            <column name="id">2</column>
+            <column name="name">Лермонтов</column>
+        </insert>
+
+        <insert tableName="books">
+            <column name="id">1</column>
+            <column name="title">Капитанская дочка</column>
+            <column name="author">1</column>
+            <column name="description">some description</column>
+            <column name="rating">5</column>
+            <column name="cost">100</column>
+        </insert>
+    </changeSet>
+    
+</databaseChangeLog>
