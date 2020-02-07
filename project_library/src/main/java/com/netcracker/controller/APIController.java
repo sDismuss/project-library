@@ -15,7 +15,7 @@ public class APIController {
     private AuthorService authorService;
 
     @GetMapping("/api/authors")
-    public List<Author> getAuthors(){
+    public List<Author> getAuthors() {
         List<Author> authors = authorService.getAuthors();
         return authors;
     }

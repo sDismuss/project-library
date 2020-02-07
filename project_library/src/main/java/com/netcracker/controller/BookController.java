@@ -2,7 +2,6 @@ package com.netcracker.controller;
 
 import com.netcracker.model.Book;
 import com.netcracker.model.Image;
-import com.netcracker.repository.ImageRepository;
 import com.netcracker.service.BookService;
 import com.netcracker.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,16 +22,16 @@ public class BookController {
     private ImageService imageService;
 
     @GetMapping("/library/book/{id}")
-    public String bookForm(Model model, @PathVariable("id") String id){
-       model.addAttribute("book", getID(id));
-       model.addAttribute("images", getImages(id));
+    public String bookForm(Model model, @PathVariable("id") String id) {
+        model.addAttribute("book", getID(id));
+        model.addAttribute("images", getImages(id));
         return "book";
     }
 
     public Book getID(String id) {
         List<Book> books = bookService.getBooks();
-        for (Book book: books) {
-            if(book.getId().equals(id))
+        for (Book book : books) {
+            if (book.getId().equals(id))
                 return book;
         }
         return null;
@@ -41,8 +40,8 @@ public class BookController {
     public List<Image> getImages(String id) {
         List<Image> images = imageService.getImages();
         List<Image> currImages = new ArrayList<>();
-        for (Image image: images) {
-            if(image.getBook().equals(id))
+        for (Image image : images) {
+            if (image.getBook().equals(id))
                 currImages.add(image);
         }
         return currImages;

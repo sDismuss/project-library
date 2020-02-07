@@ -1,6 +1,5 @@
 package com.netcracker;
 
-import com.netcracker.model.Author;
 import com.netcracker.service.AuthorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
-
 @SpringBootApplication
-public class SpringBootStarter implements CommandLineRunner{
+public class SpringBootStarter implements CommandLineRunner {
 
     private static final Logger log = LoggerFactory.getLogger(SpringBootStarter.class);
 
@@ -25,9 +22,7 @@ public class SpringBootStarter implements CommandLineRunner{
 
     @Override
     public void run(String... args) {
-
-
-        log.info("find by id");
+        /*log.info("find by id");
         System.out.println(authorService.findById("2"));
 
 
@@ -44,8 +39,7 @@ public class SpringBootStarter implements CommandLineRunner{
         authorService.save(new Author("4","Gleb"));
 
         log.info("retreive by title");
-        authorService.retrieveByName("Clever Book").forEach(System.out::println);
+        authorService.retrieveByName("Clever Book").forEach(System.out::println);*/
 
     }
-
 }
