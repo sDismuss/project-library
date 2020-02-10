@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcb05da5-0147-49b2-a6ed-ea85e206730c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/static/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/static/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/netcracker/model/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/netcracker/repository/ImageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/netcracker/service/ImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/templates/successful.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/repository/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/netcracker/service/CartService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/static/js/someFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/static/js/someFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/netcracker/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/templates/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/templates/library.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/SpringBootStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/SpringBootStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/netcracker/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/repository/ImageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/netcracker/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/someFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/someFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/netcracker/SpringBootStarter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/netcracker/SpringBootStarter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/library.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/library.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +39,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -64,7 +66,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Some_programs/JAVA/complete" />
+    <property name="last_opened_file_path" value="D:/Some_programs/JAVA/Java_task_Collections_part1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -260,6 +262,10 @@
       <workItem from="1580828863729" duration="766000" />
       <workItem from="1580880960333" duration="11444000" />
       <workItem from="1580967812081" duration="11491000" />
+      <workItem from="1581086836014" duration="2336000" />
+      <workItem from="1581152077479" duration="10094000" />
+      <workItem from="1581317848646" duration="7481000" />
+      <workItem from="1581326087724" duration="239000" />
     </task>
     <servers />
   </component>
@@ -275,11 +281,11 @@
       <screen x="0" y="0" width="1293" height="768" />
     </state>
     <state x="309" y="27" key="#HandlingFormSubmissionApplication/0.0.1293.768@0.0.1293.768" timestamp="1578470423484" />
-    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1580990394960">
+    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser" timestamp="1581152564368">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="451" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1293.768@0.0.1293.768" timestamp="1578470568516" />
-    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1295.768@0.0.1295.768" timestamp="1580990394960" />
+    <state x="452" y="102" key="#com.intellij.ide.util.MemberChooser/0.0.1295.768@0.0.1295.768" timestamp="1581152564368" />
     <state x="243" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579946489332">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
@@ -292,51 +298,51 @@
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="410" y="261" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1295.768@0.0.1295.768" timestamp="1579864077542" />
-    <state x="427" y="141" key="FileChooserDialogImpl" timestamp="1579528219831">
+    <state x="427" y="141" key="FileChooserDialogImpl" timestamp="1581161438900">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="426" y="141" key="FileChooserDialogImpl/0.0.1293.768@0.0.1293.768" timestamp="1578436150110" />
-    <state x="427" y="141" key="FileChooserDialogImpl/0.0.1295.768@0.0.1295.768" timestamp="1579528219831" />
-    <state width="1253" height="127" key="GridCell.Tab.0.bottom" timestamp="1580993406918">
+    <state x="427" y="141" key="FileChooserDialogImpl/0.0.1295.768@0.0.1295.768" timestamp="1581161438900" />
+    <state width="1253" height="299" key="GridCell.Tab.0.bottom" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.bottom/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
-    <state width="1253" height="127" key="GridCell.Tab.0.center" timestamp="1580993406918">
+    <state width="1253" height="299" key="GridCell.Tab.0.bottom/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.0.center" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.center/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
-    <state width="1253" height="127" key="GridCell.Tab.0.left" timestamp="1580993406918">
+    <state width="1253" height="299" key="GridCell.Tab.0.center/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.0.left" timestamp="1581325718160">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.left/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
-    <state width="1253" height="127" key="GridCell.Tab.0.right" timestamp="1580993406918">
+    <state width="1253" height="299" key="GridCell.Tab.0.left/0.0.1295.768@0.0.1295.768" timestamp="1581325718160" />
+    <state width="1253" height="299" key="GridCell.Tab.0.right" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.0.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="127" key="GridCell.Tab.0.right/0.0.1295.768@0.0.1295.768" timestamp="1580993406918" />
-    <state width="1253" height="83" key="GridCell.Tab.1.bottom" timestamp="1579995718216">
+    <state width="1253" height="299" key="GridCell.Tab.0.right/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.1.bottom" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.1.bottom/0.0.1293.768@0.0.1293.768" timestamp="1578476969874" />
-    <state width="1253" height="83" key="GridCell.Tab.1.bottom/0.0.1295.768@0.0.1295.768" timestamp="1579995718216" />
-    <state width="1253" height="83" key="GridCell.Tab.1.center" timestamp="1579995718216">
+    <state width="1253" height="299" key="GridCell.Tab.1.bottom/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.1.center" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.1.center/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="83" key="GridCell.Tab.1.center/0.0.1295.768@0.0.1295.768" timestamp="1579995718216" />
-    <state width="1253" height="83" key="GridCell.Tab.1.left" timestamp="1579995718216">
+    <state width="1253" height="299" key="GridCell.Tab.1.center/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.1.left" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.1.left/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="83" key="GridCell.Tab.1.left/0.0.1295.768@0.0.1295.768" timestamp="1579995718216" />
-    <state width="1253" height="83" key="GridCell.Tab.1.right" timestamp="1579995718216">
+    <state width="1253" height="299" key="GridCell.Tab.1.left/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
+    <state width="1253" height="299" key="GridCell.Tab.1.right" timestamp="1581325718170">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state width="1249" height="89" key="GridCell.Tab.1.right/0.0.1293.768@0.0.1293.768" timestamp="1578476969864" />
-    <state width="1253" height="83" key="GridCell.Tab.1.right/0.0.1295.768@0.0.1295.768" timestamp="1579995718216" />
+    <state width="1253" height="299" key="GridCell.Tab.1.right/0.0.1295.768@0.0.1295.768" timestamp="1581325718170" />
     <state width="1253" height="111" key="GridCell.Tab.2.bottom" timestamp="1578703851992">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
@@ -361,11 +367,11 @@
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="177" y="20" key="SettingsEditor/0.0.1295.768@0.0.1295.768" timestamp="1579085975027" />
-    <state x="355" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1580967811169">
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog" timestamp="1581326086957">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="354" y="210" key="com.intellij.ide.util.TipDialog/0.0.1293.768@0.0.1293.768" timestamp="1578470245784" />
-    <state x="355" y="210" key="com.intellij.ide.util.TipDialog/0.0.1295.768@0.0.1295.768" timestamp="1580967811169" />
+    <state x="355" y="210" key="com.intellij.ide.util.TipDialog/0.0.1295.768@0.0.1295.768" timestamp="1581326086957" />
     <state x="326" y="45" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577186143872">
       <screen x="0" y="0" width="1293" height="768" />
     </state>
@@ -378,9 +384,26 @@
       <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="364" y="25" key="refactoring.ChangeSignatureDialog/0.0.1295.768@0.0.1295.768" timestamp="1579994134947" />
-    <state x="309" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1577231995992">
-      <screen x="0" y="0" width="1293" height="768" />
+    <state x="309" y="89" width="674" height="678" key="search.everywhere.popup" timestamp="1581325256095">
+      <screen x="0" y="0" width="1295" height="768" />
     </state>
     <state x="309" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1293.768@0.0.1293.768" timestamp="1577231995992" />
+    <state x="309" y="89" width="674" height="678" key="search.everywhere.popup/0.0.1295.768@0.0.1295.768" timestamp="1581325256095" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/netcracker/controller/CartController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/netcracker/controller/CartController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
