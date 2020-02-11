@@ -1,7 +1,7 @@
-package main.java.com.netcracker.service;
+package com.netcracker.service;
 
-import main.java.com.netcracker.model.Book;
-import main.java.com.netcracker.repository.BookRepository;
+import com.netcracker.model.Book;
+import com.netcracker.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package main.java.com.netcracker.jdbc;
+package com.netcracker.jdbc;
 
-import main.java.com.netcracker.model.Book;
+import com.netcracker.model.Book;
 
 import java.sql.*;
 import java.util.ArrayList;

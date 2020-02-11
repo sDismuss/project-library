@@ -1,7 +1,7 @@
-package main.java.com.netcracker.service;
+package com.netcracker.service;
 
-import main.java.com.netcracker.model.Image;
-import main.java.com.netcracker.repository.ImageRepository;
+import com.netcracker.model.Image;
+import com.netcracker.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

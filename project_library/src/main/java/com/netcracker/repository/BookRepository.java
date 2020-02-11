@@ -1,6 +1,6 @@
-package main.java.com.netcracker.repository;
+package com.netcracker.repository;
 
-import main.java.com.netcracker.model.Book;
+import com.netcracker.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

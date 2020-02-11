@@ -1,7 +1,7 @@
-package main.java.com.netcracker.controller;
+package com.netcracker.controller;
 
-import main.java.com.netcracker.model.Cart;
-import main.java.com.netcracker.service.CartService;
+import com.netcracker.model.Cart;
+import com.netcracker.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

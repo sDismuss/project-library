@@ -1,9 +1,9 @@
-package main.java.com.netcracker.controller;
+package com.netcracker.controller;
 
-import main.java.com.netcracker.model.Book;
-import main.java.com.netcracker.model.Image;
-import main.java.com.netcracker.service.BookService;
-import main.java.com.netcracker.service.ImageService;
+import com.netcracker.model.Book;
+import com.netcracker.model.Image;
+import com.netcracker.service.BookService;
+import com.netcracker.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

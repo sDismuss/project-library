@@ -1,4 +1,4 @@
-package main.java.com.netcracker.model;
+package com.netcracker.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

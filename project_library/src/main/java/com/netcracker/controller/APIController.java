@@ -1,7 +1,7 @@
-package main.java.com.netcracker.controller;
+package com.netcracker.controller;
 
-import main.java.com.netcracker.model.Author;
-import main.java.com.netcracker.service.AuthorService;
+import com.netcracker.model.Author;
+import com.netcracker.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
