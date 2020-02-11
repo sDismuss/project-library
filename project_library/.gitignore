@@ -24,6 +24,7 @@ hs_err_pid*
 
 #.idea package
 /.idea/*
+*.iml
 
 #target packeage
 /target/*
