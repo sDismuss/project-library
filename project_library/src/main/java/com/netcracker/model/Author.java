@@ -1,6 +1,7 @@
 package com.netcracker.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
@@ -9,6 +10,8 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
+    @OneToMany(mappedBy="author", fetch=FetchType.EAGER)
+    private List<Book> books;
 
     public Author() {
     }

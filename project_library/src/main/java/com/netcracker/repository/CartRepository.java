@@ -8,11 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CartRepository extends JpaRepository<Cart, String> {
-    List<Cart> findByBook(String book);
+    List<Cart> findByUserID(String userID);
 
-    @Query(value = "SELECT * FROM  public.cart c WHERE c.book = :book", nativeQuery = true)
-    List<Cart> retrieveByBook(@Param("book") String book);
-
-    @Override
-    <S extends Cart> S save(S s);
+    @Query(value = "SELECT * FROM  public.cart c WHERE c.userID = :userID", nativeQuery = true)
+    List<Cart> retrieveByUser(@Param("userID") String userID);
 }

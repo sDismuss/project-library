@@ -4,10 +4,10 @@
     <title>Book</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
-    <script type = "application/javascript" th:src="@{/static/js/someFunctions.js}"> </script>
-    <script type = "application/javascript" th:src="@{/static/js/jquery.magnific-popup.js}"> </script>
-    <link rel="stylesheet" th:href="@{/static/css/magnific-popup.css}">
-    <link rel="stylesheet" th:href="@{/static/css/style.css}">
+    <script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
+    <script type = "application/javascript" th:src="@{/js/jquery.magnific-popup.js}"> </script>
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <header>
@@ -15,7 +15,7 @@
 </header>
 <p th:text="'id: ' + ${book.id}" />
 <p th:text="'title: ' + ${book.title}" />
-<p th:text="'author: ' + ${book.author}" />
+<p th:text="'author: ' + ${book.author.getName()}" />
 <p th:text="'description: ' + ${book.description}" />
 <p th:text="'rating: ' + ${book.rating}" />
 <p th:text="'cost: ' + ${book.cost}" />
@@ -23,8 +23,7 @@
 <i th:each="image : ${images}">
     <a th:href="${image.link}"><img th:src ="${image.link}" width="150" height="100"></a>
 </i></div></p>
-
-<p><a type="submit" th:href="@{'/library/cart/' + ${book.id}}">Add to Cart</a></p>
+<p><a type="submit" th:href="@{'/library/cart/add/' + ${book.id}}">Add to Cart</a></p>
 <a href="/library">Return to the main page</a>
 </body>
 </html>

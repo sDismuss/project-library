@@ -4,7 +4,7 @@
     <title>Library</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
-    <script type = "application/javascript" th:src="@{/static/js/someFunctions.js}"> </script>
+    <script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
 </head>
 <body>
 <header>
@@ -22,7 +22,7 @@
         <tr>
             <td class="text" th:text="${book.id}">...</td>
             <td class="text" th:text="${book.title}">...</td>
-            <td class="text" th:text="${book.author}">...</td>
+            <td class="text" th:text="${book.author.getName()}">...</td>
             <td class="text" th:text="${book.description}">...</td>
             <td><a th:href="@{'/library/book/' + ${book.id}}">Watch more...</a></td>
         </tr>

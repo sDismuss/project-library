@@ -12,9 +12,9 @@
     <tr>
         <th>Title</th>
     </tr>
-    <th:block th:each="cart : ${cart}">
+    <th:block th:each="book: ${cart.books}">
         <tr>
-            <td class="text" th:text="${cart.book}">...</td>
+            <td class="text" th:text="${book.book.getTitle()}">...</td>
         </tr>
     </th:block>
 </table>

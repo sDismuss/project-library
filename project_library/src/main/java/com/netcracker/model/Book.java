@@ -1,6 +1,7 @@
 package com.netcracker.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "books")
@@ -9,19 +10,21 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String title;
-    private String author;
+    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name = "author")
+    private Author author;
     private String description;
     private String rating;
     private String cost;
-
+    @OneToMany(mappedBy = "book", fetch=FetchType.EAGER)
+    private List<CartItem> cartItems;
     public Book() {
     }
 
 
-    public Book(String id, String title, String author, String description, String rating, String cost) {
+    public Book(String id, String title, String description, String rating, String cost) {
         this.id = id;
         this.title = title;
-        this.author = author;
         this.description = description;
         this.rating = rating;
         this.cost = cost;
@@ -43,11 +46,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -107,7 +110,7 @@ public class Book {
         return "Book{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
+                ", author='" + author.toString() + '\'' +
                 ", description='" + description + '\'' +
                 ", rating='" + rating + '\'' +
                 ", cost='" + cost + '\'' +

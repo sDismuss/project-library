@@ -1,12 +1,17 @@
 package com.netcracker.jdbc;
 
 import com.netcracker.model.Book;
+import com.netcracker.service.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCConnection {
+    @Autowired
+    private AuthorService authorService;
+
     private Connection connection;
 
     public JDBCConnection() {
@@ -41,7 +46,7 @@ public class JDBCConnection {
                 Book book = new Book();
                 book.setId(resultSet.getString("id"));
                 book.setTitle(resultSet.getString("title"));
-                book.setAuthor(resultSet.getString("author"));
+                book.setAuthor(authorService.findById(resultSet.getString("author")));
                 book.setDescription(resultSet.getString("description"));
                 book.setRating(resultSet.getString("rating"));
                 book.setCost(resultSet.getString("book_cost"));
