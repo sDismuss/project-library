@@ -9,7 +9,7 @@ $(document).ready(function() {
             $('#authors').html('<p> Authors </p>');
             while(i < jd.length) {
                 $('#authors').append('<p> ID: ' + jd[i].id + '</p>');
-                $('#authors').append('<p>Name: ' + jd[i].name + '</p>');
+                $('#authors').append('<p> Name: ' + jd[i].name + '</p>');
                 i++;
             }
         });

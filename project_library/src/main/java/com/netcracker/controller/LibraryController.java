@@ -1,8 +1,6 @@
 package com.netcracker.controller;
 
-import com.netcracker.model.Author;
 import com.netcracker.model.Book;
-import com.netcracker.service.AuthorService;
 import com.netcracker.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

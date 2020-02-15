@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
     <title>Book</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
     <script type = "application/javascript" th:src="@{/js/someFunctions.js}"> </script>
     <script type = "application/javascript" th:src="@{/js/jquery.magnific-popup.js}"> </script>
-    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<header>
-    <h1>Information</h1>
-</header>
-<p th:text="'id: ' + ${book.id}" />
-<p th:text="'title: ' + ${book.title}" />
-<p th:text="'author: ' + ${book.author.getName()}" />
-<p th:text="'description: ' + ${book.description}" />
-<p th:text="'rating: ' + ${book.rating}" />
-<p th:text="'cost: ' + ${book.cost}" />
-<p><div class="parent-container" >
-<i th:each="image : ${images}">
-    <a th:href="${image.link}"><img th:src ="${image.link}" width="150" height="100"></a>
-</i></div></p>
-<p><a type="submit" th:href="@{'/library/cart/add/' + ${book.id}}">Add to Cart</a></p>
-<a href="/library">Return to the main page</a>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">Project_Library</h5>
+    <a class="btn btn-outline-primary" href="/library/cart">Your cart</a>
+</div>
+<div class = "container">
+    <div class="py-5 text-center">
+        <h1>Information</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <div>
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Cost</span>
+                    <small th:text="${book.cost}" />
+                </h4>
+                <a type="submit" class="btn btn-lg btn-primary" th:href="@{'/library/cart/add/' + ${book.id}}">Add to Cart</a>
+            </div>
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3" th:text="${book.title}"></h4>
+            <div class="mb-3">
+                <p th:text="'author: ' + ${book.author.getName()}" />
+            </div>
+            <div class="mb-3">
+                <h5>Description: </h5>
+                <p th:text="${book.description}" />
+            </div>
+            <div class="mb-3">
+                <h5>Rating:</h5>
+                <span class="badge badge-secondary badge-pill" th:text="${book.rating}"/>
+            </div>
+        </div>
+    </div>
+    <p>
+    <div class="parent-container" >
+    <i th:each="image : ${images}">
+        <a th:href="${image.link}"><img th:src ="${image.link}" width="150" height="100"></a>
+    </i></div>
+    </p>
+    <p><a class="btn btn-lg btn-primary" href="/library">Return to the main page</a></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
