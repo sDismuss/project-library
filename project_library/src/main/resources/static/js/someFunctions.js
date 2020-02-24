@@ -14,9 +14,6 @@ $(document).ready(function() {
             }
         });
     })
-    $('#addBook').click(function (cartItem) {
-        $.po
-    })
     $('.parent-container').magnificPopup({
         delegate: 'a',
         gallery: {
