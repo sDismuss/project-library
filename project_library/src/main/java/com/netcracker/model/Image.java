@@ -1,10 +1,6 @@
 package com.netcracker.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -50,7 +46,7 @@ public class Image {
         Image image = (Image) o;
         return Objects.equals(id, image.id) &&
                 Objects.equals(link, image.link) &&
-                Objects.equals(book, image.book);
+                Objects.equals(image, image.book);
     }
 
     @Override

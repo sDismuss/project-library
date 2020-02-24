@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${user.login}" />
+<p th:text="${user.password}" />
+<p th:text="${user.role}" />
+<a th:href="@{/library}">Return to the main page</a>
+</body>
+</html>

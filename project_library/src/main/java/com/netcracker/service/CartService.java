@@ -39,4 +39,13 @@ public class CartService {
         return cartRepository.retrieveByUser(userID);
     }
 
+    public String totalCost(String id) {
+        List<CartItem> cartItems = findById(id).getBooks();
+        Integer total = 0;
+        for (CartItem cartItem: cartItems) {
+            total = total + Integer.parseInt(cartItem.getCost());
+        }
+        return Integer.toString(total);
+    }
+
 }

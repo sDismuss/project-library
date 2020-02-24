@@ -13,7 +13,10 @@ $(document).ready(function() {
                 i++;
             }
         });
-    });
+    })
+    $('#addBook').click(function (cartItem) {
+        $.po
+    })
     $('.parent-container').magnificPopup({
         delegate: 'a',
         gallery: {
@@ -27,16 +30,12 @@ $(document).ready(function() {
         },
         closeOnContentClick: true
     });
+});
 
+$(document).on("click",".addBook", function () {
+    alert("hello, world");
+});
 
-
-
-
-
-
-
-
-
-
-
+$(document).on("click",".deleteBook", function () {
+    alert("hello, world");
 });

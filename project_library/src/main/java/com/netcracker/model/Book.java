@@ -16,11 +16,14 @@ public class Book {
     private String description;
     private String rating;
     private String cost;
-    @OneToMany(mappedBy = "book", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy= "book", fetch=FetchType.EAGER)
     private List<CartItem> cartItems;
+    /*@OneToMany(mappedBy= "book", fetch=FetchType.EAGER)
+    private List<Image> images;*/
+
+
     public Book() {
     }
-
 
     public Book(String id, String title, String description, String rating, String cost) {
         this.id = id;
@@ -77,6 +80,14 @@ public class Book {
     public void setCost(String cost) {
         this.cost = cost;
     }
+
+    /*public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }*/
 
     @Override
     public boolean equals(Object o) {

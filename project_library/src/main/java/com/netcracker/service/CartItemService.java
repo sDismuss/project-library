@@ -1,6 +1,9 @@
 package com.netcracker.service;
 
+import com.netcracker.model.Book;
+import com.netcracker.model.Cart;
 import com.netcracker.model.CartItem;
+import com.netcracker.model.Image;
 import com.netcracker.repository.CartItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,16 +20,16 @@ public class CartItemService {
         return cartItemRepository.findAll();
     }
 
-    public CartItem findById(String id) {
-        Optional<CartItem> optional = cartItemRepository.findById(id);
+    public CartItem findById(Integer id) {
+        Optional<CartItem> optional = cartItemRepository.findById(Integer.toString(id));
         return optional.orElse(null);
     }
 
-    public List<CartItem> findByBook(String book) {
+    public List<CartItem> findByBook(Book book) {
         return cartItemRepository.findByBook(book);
     }
 
-    public List<CartItem> findByCart(String cart) {
+    public List<CartItem> findByCart(Cart cart) {
         return cartItemRepository.findByCart(cart);
     }
 
@@ -34,9 +37,20 @@ public class CartItemService {
         return cartItemRepository.save(cartItem);
     }
 
-    public List<CartItem> retrieveByBook(String book) {
+    public List<CartItem> retrieveByBook(Book book) {
         return cartItemRepository.retrieveByBook(book);
     }
 
-    public List<CartItem> retrieveByCart(String cart) { return cartItemRepository.retrieveByCart(cart); }
+    public List<CartItem> retrieveByCart(Cart cart) {
+        return cartItemRepository.retrieveByCart(cart);
+    }
+
+    public boolean existsByBook(Book book) {return cartItemRepository.existsByBook(book);}
+
+    public void delete(CartItem cartItem) { cartItemRepository.delete(cartItem);};
+
+    public void addBook(CartItem cartItem) {
+        cartItem.setQuantity(Integer.toString(Integer.parseInt(cartItem.getQuantity()) + 1));
+        this.save(cartItem);
+    }
 }
