@@ -21,7 +21,7 @@ public class CartItemService {
     }
 
     public CartItem findById(Integer id) {
-        Optional<CartItem> optional = cartItemRepository.findById(Integer.toString(id));
+        Optional<CartItem> optional = cartItemRepository.findById(id);
         return optional.orElse(null);
     }
 

@@ -2,7 +2,6 @@ package com.netcracker.controller;
 
 import com.netcracker.model.Book;
 import com.netcracker.model.CartItem;
-import com.netcracker.model.Image;
 import com.netcracker.service.BookService;
 import com.netcracker.service.CartItemService;
 import com.netcracker.service.CartService;
@@ -13,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -60,14 +60,12 @@ public class CartController {
         if (cartItemService.existsByBook(currBook)) {
             List<CartItem> listCartItem = cartItemService.findByBook(currBook);
             for (CartItem cartItem : listCartItem) {
-                if (Integer.parseInt(cartItem.getQuantity()) == 1) {
-                    cartItemService.delete(cartItem);
-                } else {
-                    cartItem.setQuantity(Integer.toString(Integer.parseInt(cartItem.getQuantity()) - 1));
-                    cartItemService.save(cartItem);
-                }
+                cartItemService.delete(cartItem);
             }
         }
         return "transitionToCart";
     }
+
+
 }
+
