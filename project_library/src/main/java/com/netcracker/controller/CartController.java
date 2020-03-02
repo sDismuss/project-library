@@ -1,6 +1,7 @@
 package com.netcracker.controller;
 
 import com.netcracker.model.Book;
+import com.netcracker.model.Cart;
 import com.netcracker.model.CartItem;
 import com.netcracker.service.BookService;
 import com.netcracker.service.CartItemService;
@@ -12,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -29,9 +29,11 @@ public class CartController {
 
     @GetMapping("/library/cart")
     public String cartForm(Model model) {
-        List<CartItem> cartItems = cartService.findById("1").getBooks();
+        Cart cart = cartService.findById("1");
+        List<CartItem> cartItems = cart.getBooks();
+        String total = cartService.totalCost("1");
         model.addAttribute("cartItems", cartItems);
-        model.addAttribute("cart", cartService);
+        model.addAttribute("total", total);
         return "cart";
     }
 

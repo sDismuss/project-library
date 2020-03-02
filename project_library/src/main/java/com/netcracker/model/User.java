@@ -8,28 +8,28 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private String login;
+    private Integer id;
+    private String username;
     private String password;
     private String role;
 
     public User() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String login) {
+        this.username = login;
     }
 
     public String getPassword() {
@@ -53,8 +53,8 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) &&
-                Objects.equals(login, user.login) &&
+        return id == user.id &&
+                Objects.equals(username, user.username) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(role, user.role);
     }
@@ -62,8 +62,8 @@ public class User {
     @Override
     public int hashCode() {
         int result = 17;
-        result = 31 * result + id.hashCode();
-        result = 31 * result + login.hashCode();
+        result = 31 * result + id;
+        result = 31 * result + username.hashCode();
         result = 31 * result + password.hashCode();
         result = 31 * result + role.hashCode();
         return result;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Cart</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
@@ -26,7 +27,6 @@
             color: #666666;
         }
     </style>
-    <title>Cart</title>
     <meta charset="UTF-8">
     <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
     <script type="application/javascript" th:src="@{/js/someFunctions.js}"></script>
@@ -56,7 +56,7 @@
                                 th:data-quantity="${cartItem.getQuantity()}"
                                 th:data-cost="${cartItem.getBook().getCost()}"
                                 th:data-total-cost = "${cartItem.getCost()}"
-                                th:data-all-total="${cart.totalCost('1')}">+1
+                                th:data-all-total="${total}">+1
                         </button>
                         <button class="js-deleteBook"
                                 th:id="'deleteButton' + ${cartItem.getId()}"
@@ -64,7 +64,7 @@
                                 th:data-quantity="${cartItem.getQuantity()}"
                                 th:data-cost="${cartItem.getBook().getCost()}"
                                 th:data-total-cost = "${cartItem.getCost()}"
-                                th:data-all-total="${cart.totalCost('1')}">-1
+                                th:data-all-total="${total}">-1
                         </button>
                     </div>
                     <div class="col-md-1 order-md-3">
@@ -81,7 +81,7 @@
                 <p class="card-text">Total:</p>
             </div>
             <div class="col-md-4 order-md-2 mb-4">
-                <p id="total" class="card-text" th:text="${cart.totalCost('1')}"/>
+                <p id="total" class="card-text" th:text="${total}"/>
             </div>
         </div>
 

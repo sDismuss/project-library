@@ -1,13 +1,11 @@
 package com.netcracker.service;
 
-import com.netcracker.model.Book;
 import com.netcracker.model.Cart;
 import com.netcracker.model.CartItem;
 import com.netcracker.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
