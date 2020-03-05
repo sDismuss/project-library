@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookstore Daedalus</title>
+    <th:block th:insert="fragments/settings :: head" />
+</head>
+<body>
+<header th:insert="fragments/header :: header" > </header>
+<main role="main">
+    <div class = "pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1>Bookstore</h1>
+    </div>
+    <div class="container">
+        <table border="1" width="100%" cellpadding="5">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Link</th>
+            </tr>
+            <th:block th:each="book : ${books}">
+                <tr>
+                    <td class="text" th:text="${book.title}">...</td>
+                    <td class="text" th:text="${book.author.getName()}">...</td>
+                    <td class="text" th:text="${book.description}">...</td>
+                    <td><a th:href="@{'/store/book/' + ${book.id}}">Watch more...</a></td>
+                </tr>
+            </th:block>
+        </table>
+        <p></p>
+        <p><button id = "showAuthors" class="btn btn-lg btn-primary"> Show authors </button></p>
+        <div id = "authors" style = "background-color:#eee;"> </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

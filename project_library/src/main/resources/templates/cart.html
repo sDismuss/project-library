@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cart</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <style>
-        button {
-            border: 1px solid #0066cc;
-            background-color: #0099cc;
-            color: #ffffff;
-            padding: 5px 10px;
-        }
-
-        button:hover {
-            border: 1px solid #0099cc;
-            background-color: #00aacc;
-            color: #ffffff;
-            padding: 5px 10px;
-        }
-
-        button:disabled,
-        button[disabled]{
-            border: 1px solid #999999;
-            background-color: #cccccc;
-            color: #666666;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <script type="text/javascript" src=" https://code.jquery.com/jquery-1.11.2.js "></script>
-    <script type="application/javascript" th:src="@{/js/someFunctions.js}"></script>
+    <title>Buy books on Daedalus</title>
+    <th:block th:insert="fragments/settings :: head" />
+    <link rel="stylesheet" type="text/css" href="/css/cartStyle.css">
 </head>
 <body>
-<header>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Project_Library</h5>
-    </div>
-</header>
+<header th:insert="fragments/header :: header" > </header>
 <main role="main">
     <div class="container">
-        <h4 class="mb-3">Your cart</h4>
+        <h4 class="mb-3">YOUR SHOPPING CART</h4>
         <th:block class="itemID" th:each="cartItem: ${cartItems}">
             <div class="container">
                 <div class="row border-bottom border-gray js-cartItem">
                     <div class="col-md-6 order-md-1">
-                        <h6 th:text="${cartItem.getBook().getTitle()}"/>
+                        <h6>
+                            <a th:href="'/store/book/' + ${cartItem.getBook().getId()}" th:text="${cartItem.getBook().getTitle()}"/>
+                        </h6>
                         <span>
-                            <a class="text-muted" th:href="@{'/library/cart/delete/' + ${cartItem.getBook().getId()}}">Delete</a>
+                            <a class="text-muted"
+                               th:href="@{'/cart/delete/' + ${cartItem.getBook().getId()}}">Delete</a>
                         </span>
                     </div>
                     <div class="col-md-1 order-md-2">
@@ -55,7 +28,7 @@
                                 th:data-id="${cartItem.getId()}"
                                 th:data-quantity="${cartItem.getQuantity()}"
                                 th:data-cost="${cartItem.getBook().getCost()}"
-                                th:data-total-cost = "${cartItem.getCost()}"
+                                th:data-total-cost="${cartItem.getCost()}"
                                 th:data-all-total="${total}">+1
                         </button>
                         <button class="js-deleteBook"
@@ -63,7 +36,7 @@
                                 th:data-id="${cartItem.getId()}"
                                 th:data-quantity="${cartItem.getQuantity()}"
                                 th:data-cost="${cartItem.getBook().getCost()}"
-                                th:data-total-cost = "${cartItem.getCost()}"
+                                th:data-total-cost="${cartItem.getCost()}"
                                 th:data-all-total="${total}">-1
                         </button>
                     </div>
@@ -71,7 +44,7 @@
                         <h6 th:id="'quantity' + ${cartItem.getId()}" th:text="${cartItem.getQuantity()}"/>
                     </div>
                     <div class="col-md-4 order-md-4 mb-4">
-                        <h6 th:id="'cost' + ${cartItem.getId()}"th:text="${cartItem.getCost()}"/>
+                        <h6 th:id="'cost' + ${cartItem.getId()}" th:text="${cartItem.getCost()}"/>
                     </div>
                 </div>
             </div>
@@ -84,41 +57,8 @@
                 <p id="total" class="card-text" th:text="${total}"/>
             </div>
         </div>
-
-        <!--btn btn-sm btn-outline-secondary -->
-        <!--<div class="col-md-4 order-md-2 mb-4">
-            <h5 class="d-flex justify-content-between align-items-center mb-3">Price</h5>
-            <th:block th:each="cartItem: ${cartItems}">
-                <p class="lead text-muted" th:text="${cartItem.getCost()}" />
-            </th:block>
-        </div>
-        <div class="col-md-8 order-md-1">
-            <h5 class="mb-3">Title</h5>
-            <th:block th:each="cartItem: ${cartItems}">
-                <p class="lead text-muted" th:text="${cartItem.getBook().getTitle()}" />
-            </th:block>
-        </div>-->
-        <!--
-        <table border="1" width="100%" cellpadding="5">
-            <tr>
-                <th>Title</th>
-                <th>Quantity</th>
-                <th>Cost</th>
-                <th>Link</th>
-                <th>Delete</th>
-            </tr>
-            <th:block th:each="cartItem: ${cartItems}">
-                <tr>
-                    <td class="text" >...</td>
-                    <td class="text" th:text="${cartItem.getQuantity()}">...</td>
-                    <td class="text" th:text="${cartItem.getCost()}">...</td>
-                    <td><a th:href="@{'/library/book/' + ${cartItem.getBook().getId()}}">Watch more...</a></td>
-                    <td><a th:href="@{'/library/cart/delete/' + ${cartItem.getBook().getId()}}">Delete this book</a></td>
-                </tr>
-            </th:block>
-        </table>-->
         <p></p>
-        <p><a class="btn btn-lg btn-primary" href="/library">Continue shopping</a></p>
+        <p><a class="btn btn-lg btn-primary" href="/store">Continue shopping</a></p>
     </div>
 </main>
 
@@ -131,3 +71,36 @@
 
 </body>
 </html>
+
+<!--btn btn-sm btn-outline-secondary -->
+<!--<div class="col-md-4 order-md-2 mb-4">
+    <h5 class="d-flex justify-content-between align-items-center mb-3">Price</h5>
+    <th:block th:each="cartItem: ${cartItems}">
+        <p class="lead text-muted" th:text="${cartItem.getCost()}" />
+    </th:block>
+</div>
+<div class="col-md-8 order-md-1">
+    <h5 class="mb-3">Title</h5>
+    <th:block th:each="cartItem: ${cartItems}">
+        <p class="lead text-muted" th:text="${cartItem.getBook().getTitle()}" />
+    </th:block>
+</div>-->
+<!--
+<table border="1" width="100%" cellpadding="5">
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+        <th>Link</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="cartItem: ${cartItems}">
+        <tr>
+            <td class="text" >...</td>
+            <td class="text" th:text="${cartItem.getQuantity()}">...</td>
+            <td class="text" th:text="${cartItem.getCost()}">...</td>
+            <td><a th:href="@{'/library/book/' + ${cartItem.getBook().getId()}}">Watch more...</a></td>
+            <td><a th:href="@{'/library/cart/delete/' + ${cartItem.getBook().getId()}}">Delete this book</a></td>
+        </tr>
+    </th:block>
+</table>-->

@@ -10,6 +10,7 @@ public class Cart {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private String id;
+    @Column(name = "userid")
     private String userID;
     @OneToMany(mappedBy="cart", fetch=FetchType.EAGER)
     private List<CartItem> books;

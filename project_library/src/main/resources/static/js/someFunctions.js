@@ -1,7 +1,7 @@
 "use strict";
 $(document).ready(function () {
-    $('#hi').click(function () {
-        alert("Hello, World");
+    $('#hello').click(function () {
+        alert("hello");
     });
     $('#showAuthors').click(function () {
         $.getJSON('/api/authors', function (jd) {
@@ -24,7 +24,7 @@ $(document).ready(function () {
         totalCost = totalCost + cost;
         allTotal = allTotal + cost;
         let jd = false;
-        let request = $.post("/library/cart/quantity/" + id + "/" + quantity, function (json) {
+        let request = $.post("/cart/quantity/" + id + "/" + quantity, function (json) {
             jd = Boolean(json);
         }, "json");
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
         totalCost = totalCost - cost;
         allTotal = allTotal - cost;
         let jd = false;
-        let request = $.post("/library/cart/quantity/" + id + "/" + quantity, function (json) {
+        let request = $.post("/cart/quantity/" + id + "/" + quantity, function (json) {
             jd = Boolean(json);
         }, "json");
 
@@ -85,37 +85,4 @@ $(document).ready(function () {
             alert("Request failed: " + textStatus);
         });
     });
-
-
-    $('.parent-container').magnificPopup({
-        delegate: 'a',
-        gallery: {
-            enabled: true
-        },
-        type: 'image',
-        callbacks: {
-            elementParse: function (item) {
-                console.log(item);
-            }
-        },
-        closeOnContentClick: true
-    });
 });
-
-let func = function () {
-    $.post('/library/cart/quantity', function (json) {
-        let t = false;
-        t = json.toString();
-        console.log(json.length);
-    });
-    return t;
-};
-
-$(function () {
-
-});
-
-/*
-
-
-        alert(jd);*/

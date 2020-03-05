@@ -53,4 +53,12 @@ public class CartItemService {
         cartItem.setQuantity(Integer.toString(Integer.parseInt(cartItem.getQuantity()) + 1));
         this.save(cartItem);
     }
+
+    public boolean existsByBook(List<CartItem> cartItems, Book book) {
+        for (CartItem cartItem: cartItems) {
+            if(cartItem.getBook().equals(book))
+                return true;
+        }
+        return false;
+    }
 }

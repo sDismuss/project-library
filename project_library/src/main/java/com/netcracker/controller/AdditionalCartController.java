@@ -12,7 +12,7 @@ public class AdditionalCartController {
     @Autowired
     private CartItemService cartItemService;
 
-    @RequestMapping("/library/cart/quantity/{id}/{quantity}")
+    @RequestMapping("/cart/quantity/{id}/{quantity}")
     public boolean changeQuantity(@PathVariable("id") String id, @PathVariable("quantity") String quantity) {
         boolean answer = false;
         if(Integer.parseInt(quantity) > 0) {

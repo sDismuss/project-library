@@ -21,7 +21,7 @@ public class BookController {
     @Autowired
     private ImageService imageService;
 
-    @GetMapping("/library/book/{id}")
+    @GetMapping("/store/book/{id}")
     public String bookForm(Model model, @PathVariable("id") String id) {
         model.addAttribute("book", getID(id));
         model.addAttribute("images", getImages(id));
