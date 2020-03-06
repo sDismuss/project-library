@@ -20,6 +20,8 @@ public class UserController {
         String username = myUserDetailsService.getCurrentUsername();
         User user = userService.findByUsername(username);
         model.addAttribute("user", user);
+        Boolean logIn = userService.userLogIn();
+        model.addAttribute("logIn", logIn);
         return "user";
     }
 }

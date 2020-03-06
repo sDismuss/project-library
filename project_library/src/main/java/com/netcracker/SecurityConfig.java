@@ -14,14 +14,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/store","/store/book/{id}","/js/**", "/css/**").permitAll()
+                .antMatchers("/", "/store","/store/book/{id}","/js/**", "/css/**","/api/authors").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                .logout()
+                .logout().logoutSuccessUrl("/store")
                 .permitAll();
         ;
     }

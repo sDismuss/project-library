@@ -11,7 +11,10 @@
         <p th:text="${user.getUsername()}"/>
         <p th:text="${user.getPassword()}"/>
         <p th:text="${user.getRole()}"/>
-        <a th:href="@{/store}">Return to the main page</a>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <a th:href="@{/}">Return to the main page</a>
     </div>
 </main>
 </body>

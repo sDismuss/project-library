@@ -20,7 +20,7 @@
             </tr>
             <th:block th:each="book : ${books}">
                 <tr>
-                    <td class="text" th:text="${book.title}">...</td>
+                    <td class="text js-example" th:data-id="${book.getId()}" th:text="${book.title}">...</td>
                     <td class="text" th:text="${book.author.getName()}">...</td>
                     <td class="text" th:text="${book.description}">...</td>
                     <td><a th:href="@{'/store/book/' + ${book.id}}">Watch more...</a></td>

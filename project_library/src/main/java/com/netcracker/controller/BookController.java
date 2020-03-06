@@ -4,6 +4,7 @@ import com.netcracker.model.Book;
 import com.netcracker.model.Image;
 import com.netcracker.service.BookService;
 import com.netcracker.service.ImageService;
+import com.netcracker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,14 +16,17 @@ import java.util.List;
 
 @Controller
 public class BookController {
-
     @Autowired
     private BookService bookService;
     @Autowired
     private ImageService imageService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/store/book/{id}")
     public String bookForm(Model model, @PathVariable("id") String id) {
+        Boolean logIn = userService.userLogIn();
+        model.addAttribute("logIn", logIn);
         model.addAttribute("book", getID(id));
         model.addAttribute("images", getImages(id));
         return "book";

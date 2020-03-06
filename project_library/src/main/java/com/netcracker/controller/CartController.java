@@ -3,10 +3,7 @@ package com.netcracker.controller;
 import com.netcracker.model.Book;
 import com.netcracker.model.Cart;
 import com.netcracker.model.CartItem;
-import com.netcracker.service.BookService;
-import com.netcracker.service.CartItemService;
-import com.netcracker.service.CartService;
-import com.netcracker.service.ImageService;
+import com.netcracker.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +23,8 @@ public class CartController {
     private CartItemService cartItemService;
     @Autowired
     private ImageService imageService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/cart")
     public String cartForm(Model model) {
@@ -34,6 +33,8 @@ public class CartController {
         model.addAttribute("cartItems", cartItems);
         String total = cartService.totalCost(cart.getId());
         model.addAttribute("total", total);
+        Boolean logIn = userService.userLogIn();
+        model.addAttribute("logIn", logIn);
         return "cart";
     }
 

@@ -85,4 +85,13 @@ $(document).ready(function () {
             alert("Request failed: " + textStatus);
         });
     });
+
+    if($('[id^="deleteButton"]').length > 0) {
+        $('[id^="deleteButton"]').each(function () {
+            if($(this).data("quantity") == 1) {
+                let id = $(this).data("id");
+                $("#deleteButton" + id).attr("disabled",true);
+            }
+        });
+    }
 });
