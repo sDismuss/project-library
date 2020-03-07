@@ -14,7 +14,8 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
     @Autowired
-    private AuthorService authorService;
+    private ImageService imageService;
+
 
     public List<Book> findAll() {
         return bookRepository.findAll();
@@ -42,4 +43,13 @@ public class BookService {
         return books;
     }
 
+    public Image getFirstImage(Book book) {
+        List<Image> images = imageService.getImages();
+        for (Image image: images) {
+            if(image.getBook().equals(book.getId())) {
+                return image;
+            }
+        }
+        return null;
+    }
 }

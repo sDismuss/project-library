@@ -10,27 +10,29 @@
     <div class = "pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
         <h1>Bookstore</h1>
     </div>
-    <div class="container">
-        <table border="1" width="100%" cellpadding="5">
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Description</th>
-                <th>Link</th>
-            </tr>
-            <th:block th:each="book : ${books}">
-                <tr>
-                    <td class="text js-example" th:data-id="${book.getId()}" th:text="${book.title}">...</td>
-                    <td class="text" th:text="${book.author.getName()}">...</td>
-                    <td class="text" th:text="${book.description}">...</td>
-                    <td><a th:href="@{'/store/book/' + ${book.id}}">Watch more...</a></td>
-                </tr>
-            </th:block>
-        </table>
-        <p></p>
-        <p><button id = "showAuthors" class="btn btn-lg btn-primary"> Show authors </button></p>
-        <div id = "authors" style = "background-color:#eee;"> </div>
+    <div class = "album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <th:block th:each="book : ${books}">
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img card-img-top"
+                                 th:src="${book.getFirstImage().getLink()}" width="100%" height="225">
+                            <div class="card-body">
+                                <h6 class="mb-0" th:text="${book.title}" />
+                                <div class="mb-1 text-muted" th:text="${book.author.getName()}" />
+                                <p class="card-text mb-auto" th:text="${book.getDescription()}"></p>
+                                <a class="stretched-link" th:href="@{'/store/book/' + ${book.id}}">Watch more</a>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </div>
     </div>
+    <p></p>
+    <p><button id = "showAuthors" class="btn btn-lg btn-primary"> Show authors </button></p>
+    <div id = "authors" style = "background-color:#eee;"> </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -38,3 +40,22 @@
 
 </body>
 </html>
+
+<!--
+<table border="1" width="100%" cellpadding="5">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                    <th:block th:each="book : ${books}">
+                        <tr>
+                            <td class="text" th:text="${book.title}">...</td>
+                            <td class="text" th:text="${book.author.getName()}">...</td>
+                            <td class="text" th:text="${book.description}">...</td>
+                            <td></td>
+                        </tr>
+                    </th:block>
+                </table>
+                -->

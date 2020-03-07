@@ -25,10 +25,11 @@ public class BookController {
 
     @GetMapping("/store/book/{id}")
     public String bookForm(Model model, @PathVariable("id") String id) {
+        Book book = getID(id);
+        model.addAttribute("book", book);
+        model.addAttribute("images", getImages(book));
         Boolean logIn = userService.userLogIn();
         model.addAttribute("logIn", logIn);
-        model.addAttribute("book", getID(id));
-        model.addAttribute("images", getImages(id));
         return "book";
     }
 
@@ -41,11 +42,11 @@ public class BookController {
         return null;
     }
 
-    public List<Image> getImages(String id) {
+    public List<Image> getImages(Book book) {
         List<Image> images = imageService.getImages();
         List<Image> currImages = new ArrayList<>();
         for (Image image : images) {
-            if (image.getBook().equals(id))
+            if (image.getBook().equals(book))
                 currImages.add(image);
         }
         return currImages;

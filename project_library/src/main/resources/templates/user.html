@@ -8,9 +8,19 @@
 <header th:insert="fragments/header :: header" > </header>
 <main>
     <div class="container">
-        <p th:text="${user.getUsername()}"/>
-        <p th:text="${user.getPassword()}"/>
-        <p th:text="${user.getRole()}"/>
+        <div class="row">
+            <div class="col-md-auto order-md-1">
+                <img src="https://im0-tub-ru.yandex.net/i?id=d0319dfdbf10652ed21cc01cab1393b2&n=13" width = 225 height="225">
+            </div>
+            <div class="col-md-5 order-md-2">
+                <h4 th:text="${user.getUsername()}"/>
+                <p th:text="${user.getEmail()}"/>
+                <p th:text="'Gender: ' + ${user.getGender()}"/>
+                <p th:text="'Country: ' + ${user.getCountry()}"/>
+                <p>Information: </p>
+                <p th:text="${user.getInformation()}"/>
+            </div>
+        </div>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>

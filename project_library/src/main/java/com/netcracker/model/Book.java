@@ -1,5 +1,8 @@
 package com.netcracker.model;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,10 +19,12 @@ public class Book {
     private String description;
     private String rating;
     private String cost;
-    @OneToMany(mappedBy= "book", fetch=FetchType.EAGER)
+    @OneToMany(mappedBy= "book")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<CartItem> cartItems;
-    /*@OneToMany(mappedBy= "book", fetch=FetchType.EAGER)
-    private List<Image> images;*/
+    @OneToMany(mappedBy= "book")
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Image> images;
 
 
     public Book() {
@@ -81,13 +86,13 @@ public class Book {
         this.cost = cost;
     }
 
-    /*public List<Image> getImages() {
+    public List<Image> getImages() {
         return images;
     }
 
     public void setImages(List<Image> images) {
         this.images = images;
-    }*/
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -126,5 +131,9 @@ public class Book {
                 ", rating='" + rating + '\'' +
                 ", cost='" + cost + '\'' +
                 '}';
+    }
+
+    public Image getFirstImage() {
+        return images.get(0);
     }
 }

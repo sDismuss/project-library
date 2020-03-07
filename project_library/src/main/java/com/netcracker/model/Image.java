@@ -10,7 +10,10 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String link;
-    private String book;
+    @ManyToOne(optional=false, cascade=CascadeType.ALL)
+    @JoinColumn (name = "book")
+    private Book book;
+
 
     public Image() {
     }
@@ -31,11 +34,11 @@ public class Image {
         this.link = link;
     }
 
-    public String getBook() {
+    public Book getBook() {
         return book;
     }
 
-    public void setBook(String book) {
+    public void setBook(Book book) {
         this.book = book;
     }
 
@@ -46,7 +49,7 @@ public class Image {
         Image image = (Image) o;
         return Objects.equals(id, image.id) &&
                 Objects.equals(link, image.link) &&
-                Objects.equals(image, image.book);
+                Objects.equals(book, image.book);
     }
 
     @Override

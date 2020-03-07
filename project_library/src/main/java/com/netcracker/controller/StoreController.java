@@ -1,8 +1,10 @@
 package com.netcracker.controller;
 
 import com.netcracker.model.Book;
+import com.netcracker.model.Image;
 import com.netcracker.model.User;
 import com.netcracker.service.BookService;
+import com.netcracker.service.ImageService;
 import com.netcracker.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
