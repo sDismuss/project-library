@@ -86,14 +86,6 @@ public class Book {
         this.cost = cost;
     }
 
-    public List<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(List<Image> images) {
-        this.images = images;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -133,7 +125,7 @@ public class Book {
                 '}';
     }
 
-    public Image getFirstImage() {
-        return images.get(0);
+    public String getFirstImage() {
+        return images.get(0).getLink();
     }
 }

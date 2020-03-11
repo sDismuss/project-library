@@ -10,6 +10,8 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, String> {
     List<Book> findByTitle(String title);
 
+    List<Book> findByAuthor(String author);
+
     @Query(value = "SELECT * FROM  public.books b WHERE b.title = :title", nativeQuery = true)
     List<Book> retrieveByTitle(@Param("title") String title);
 }

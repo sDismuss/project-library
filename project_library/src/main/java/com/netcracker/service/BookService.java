@@ -30,6 +30,10 @@ public class BookService {
         return bookRepository.findByTitle(title);
     }
 
+    public List<Book> findByAuthor(String author) {
+        return bookRepository.findByAuthor(author);
+    }
+
     public void save(Book book) {
         bookRepository.save(book);
     }
