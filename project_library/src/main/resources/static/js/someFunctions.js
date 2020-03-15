@@ -6,9 +6,9 @@ $(document).ready(function () {
     $('#showFilter').click(function () {
         if ($('#filter').attr("hidden") === "hidden") {
             if ($('#filterForm').is(':empty')) {
-                $('#filterForm').empty();
-                $('#filterForm').html('<p>Author:</p>');
                 $.getJSON('/api/authors', function (authors) {
+                    $('#filterForm').empty();
+                    $('#filterForm').html('<p>Author:</p>');
                     let i = 0;
                     let currAuthors = new Array();
                     outer: while (i < authors.length) {
@@ -23,6 +23,16 @@ $(document).ready(function () {
                         i++;
                     }
                     ;
+
+                    $('#filterForm').append('<p></p>');
+                    $('#filterForm').append('<p>Cost:</p>');
+                    $('#filterForm').append(
+                        '<div class="col-md-4 order-md-1">' +
+                        '<input type="text" name="cost" value="2">' +
+                        '</div>' +
+                        '<div class="col-md-1 order-md-3">' +
+                        '<input type="text" name="cost" value="3">' +
+                        '</div>');
                     $('#filterForm').append('<input type="submit" value="Submit">');
                     $('#filterForm').append('<input type="reset" value="Reset">');
                 });
@@ -35,7 +45,9 @@ $(document).ready(function () {
 
     $('#filterForm').submit(function (e) {
         e.preventDefault();
-        let allAuthors = document.getElementById('filterForm'),
+        let allAuthors = document.getElementById('filterForm').authors,
+            allCost = document.getElementById('filterForm').cost,
+            currentCost = new Object(),
             checkedAuthors = new Object(),
             i = 0,
             j = 0,
@@ -47,18 +59,31 @@ $(document).ready(function () {
             }
             i++;
         }
-        $('#books').empty();
-        $('#books').html();
-        $.getJSON('/api/books', function (books) {
-            i = 0;
-            while (i < books.length) {
-                let checked = false;
-                for (j = 0; j < length; j++) {
-                    if (books[i].author.name == checkedAuthors[j]) {
-                        checked = true;
-                    }
-                }
-                if (checked) {
+        if(allCost[0].value == "") {
+            currentCost[0] = "0";
+        }
+        else {
+            currentCost[0] = allCost[0].value;
+        }
+        if(allCost[1].value == "") {
+            currentCost[1] = "2147483646";
+        }
+        else {
+            currentCost[1] = allCost[1].value;
+        }
+        let arr = { Authors: checkedAuthors, Cost: currentCost };
+        $.ajax({
+            url: '/api/books/filter',
+            type: 'POST',
+            data: JSON.stringify(arr),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: false,
+            success: function(books) {
+                $('#books').empty();
+                $('#books').html();
+                i = 0;
+                while (i < books.length) {
                     $('#books').append(
                         '<div class="col-md-4">' +
                         '<div class="card mb-4 shadow-sm">' +
@@ -72,10 +97,22 @@ $(document).ready(function () {
                         '</div>' +
                         '</div>'
                     );
+                    i++;
                 }
-                i++;
             }
         });
+
+        /*$.getJSON('/api/books', function (books) {
+            let checked = false;
+                    for (j = 0; j < length; j++) {
+                        if (books[i].author.name == checkedAuthors[j]) {
+                            checked = true;
+                        }
+                    }
+                    if (checked) {
+
+                    }
+        });*/
     });
 
     $(".js-addBook").click(function () {

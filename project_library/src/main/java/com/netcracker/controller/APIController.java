@@ -1,14 +1,13 @@
 package com.netcracker.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.netcracker.model.Author;
 import com.netcracker.model.Book;
-import com.netcracker.model.Image;
 import com.netcracker.service.AuthorService;
 import com.netcracker.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -28,23 +27,74 @@ public class APIController {
         return authors;
     }
 
-    @GetMapping("/api/books")
+    @PostMapping("/api/books")
     public List<Book> getBooks() {
         List<Book> books = bookService.getBooks();
         return books;
     }
 
-
-    /*@GetMapping("/api/authors/books")
-    public List<Book> getBooks(@JsonFormat List<String> authors) {
-        List<Book> currBooks = new ArrayList<>();
-        for (String author: authors) {
-            String id = authorService.findByName(author).get(0).getId();
-            List<Book> books = bookService.findByAuthor(id);
-            for (Book book: books){
-                currBooks.add(book);
+    @PostMapping("/api/books/filter")
+    public List<Book> filterForm(@RequestBody String filter) {
+        StringBuffer filterText = new StringBuffer(filter);
+        List<String> authorNames = getAuthorNames(filterText);
+        if(authorNames.isEmpty()) {
+            List<Author> authors = authorService.getAuthors();
+            for (Author author: authors) {
+                authorNames.add(author.getName());
             }
         }
-        return currBooks;
-    }*/
+        List<Integer> costs = getCosts(filterText);
+        System.out.println(authorNames);
+        System.out.println(costs);
+        List<Book> allBooks = bookService.getBooks();
+        List<Book> currentBooks = new ArrayList<>();
+        for (Book book: allBooks) {
+            Boolean checked = false;
+            for (String author: authorNames) {
+                if (book.getAuthor().getName().equals(author)) {
+                    checked = true;
+                }
+            }
+            if(checked &&
+                    Integer.parseInt(book.getCost()) >= costs.get(0) &&
+                    Integer.parseInt(book.getCost()) <= costs.get(1)) {
+                currentBooks.add(book);
+            }
+        }
+        return currentBooks;
+    }
+
+    private List<String> getAuthorNames (StringBuffer stringBuffer) {
+        List<String> authorNames = new ArrayList<>();
+        stringBuffer.delete(0, stringBuffer.indexOf("Authors"));
+        stringBuffer.delete(0, 10);
+        while (stringBuffer.charAt(0) != '}') {
+            int firstAuthorIndex = 0,
+                    lastAuthorIndex = 0;
+            firstAuthorIndex = stringBuffer.indexOf(":") + 2;
+            stringBuffer.delete(0, firstAuthorIndex);
+            lastAuthorIndex = stringBuffer.indexOf("\"");
+            String nextAuthor = stringBuffer.substring(0, lastAuthorIndex);
+            authorNames.add(nextAuthor);
+            stringBuffer.delete(0, lastAuthorIndex + 1);
+        }
+        return authorNames;
+    }
+
+    private List<Integer> getCosts (StringBuffer stringBuffer) {
+        List<Integer> costs = new ArrayList<>();
+        stringBuffer.delete(0, stringBuffer.indexOf("Cost"));
+        stringBuffer.delete(0, 7);
+        while (stringBuffer.charAt(0) != '}') {
+            int firstCostIndex = 0,
+                    lastCostIndex = 0;
+            firstCostIndex = stringBuffer.indexOf(":") + 2;
+            stringBuffer.delete(0, firstCostIndex);
+            lastCostIndex = stringBuffer.indexOf("\"");
+            Integer nextCost = Integer.parseInt(stringBuffer.substring(0, lastCostIndex));
+            costs.add(nextCost);
+            stringBuffer.delete(0, lastCostIndex + 1);
+        }
+        return costs;
+    }
 }
