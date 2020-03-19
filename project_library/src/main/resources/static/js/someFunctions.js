@@ -7,10 +7,15 @@ $(document).ready(function () {
         if ($('#filter').attr("hidden") === "hidden") {
             if ($('#filterForm').is(':empty')) {
                 $.getJSON('/api/authors', function (authors) {
+                    let content = "",
+                        currAuthors = new Array(),
+                        i = 0;
                     $('#filterForm').empty();
-                    $('#filterForm').html('<p>Author:</p>');
-                    let i = 0;
-                    let currAuthors = new Array();
+                    $('#filterForm').html();
+                    content = content + '<fieldset class="form-group">';
+                    content = content + '<div class="row">';
+                    content = content + '<div class="col-sm-1">Authors</div>';
+                    content = content + '<div class="col-sm-10">';
                     outer: while (i < authors.length) {
                         for (let j = 0; j < currAuthors.length; j++) {
                             if (authors[i].name == currAuthors[j]) {
@@ -18,23 +23,43 @@ $(document).ready(function () {
                                 break outer;
                             }
                         }
-                        $('#filterForm').append('<input type="checkbox" name="authors" value="' + authors[i].name + '" />' + authors[i].name + '<br />');
+                        content = content + '<div class="form-check">';
+                        content = content + '<input type="checkbox" class="form-check-input" id="' + authors[i].name + '" name="authors" value="' + authors[i].name + '" />';
+                        content = content + '<label class="form-check-label" for="' + authors[i].name +'">' + authors[i].name + '</label>';
+                        content = content + '</div>';
                         currAuthors.push(authors[i].name);
                         i++;
                     }
-                    ;
+                    content = content + '</div>';
+                    content = content + '</div>';
+                    content = content + '</fieldset>';
 
-                    $('#filterForm').append('<p></p>');
-                    $('#filterForm').append('<p>Cost:</p>');
-                    $('#filterForm').append(
-                        '<div class="col-md-4 order-md-1">' +
-                        '<input type="text" name="cost" value="2">' +
-                        '</div>' +
-                        '<div class="col-md-1 order-md-3">' +
-                        '<input type="text" name="cost" value="3">' +
-                        '</div>');
-                    $('#filterForm').append('<input type="submit" value="Submit">');
-                    $('#filterForm').append('<input type="reset" value="Reset">');
+                    content = content + '<fieldset class="form-group">';
+                    content = content + '<div class="row">';
+                    content = content + '<div class="col-sm-1">Cost</div>';
+                    content = content + '<div class="col-sm-10">';
+                    content = content + '<div class="form-group row">';
+                    content = content + '<label class="col-sm-1 col-form-label" for="min">Min</label>';
+                    content = content + '<div class="col-sm-6">';
+                    content = content + '<input type="text" class="form-control is-invalid" name="min" id="min" value="">';
+                    content = content + '<div class="invalid-feedback">Looks good!</div>';
+                    content = content + '</div>';
+                    content = content + '</div>';
+                    content = content + '<div class="form-group row">';
+                    content = content + '<label class="col-sm-1 col-form-label" for="max">Max</label>';
+                    content = content + '<div class="col-sm-6">';
+                    content = content + '<input type="text" class="form-control is-invalid" name="max" id="max" value="">';
+                    content = content + '<div class="invalid-feedback">Looks good!</div>';
+                    content = content + '</div>';
+                    content = content + '</div>';
+                    content = content + '</div>';
+                    content = content + '</div>';
+                    content = content + '</fieldset>';
+
+                    content = content + '<input id="submit" type="submit" value="Submit">';
+                    content = content + '<input type="reset" value="Reset">';
+
+                    $('#filterForm').append(content);
                 });
             }
             $('#filter').attr("hidden", false);
@@ -46,7 +71,8 @@ $(document).ready(function () {
     $('#filterForm').submit(function (e) {
         e.preventDefault();
         let allAuthors = document.getElementById('filterForm').authors,
-            allCost = document.getElementById('filterForm').cost,
+            min = document.getElementById('filterForm').min,
+            max = document.getElementById('filterForm').max,
             currentCost = new Object(),
             checkedAuthors = new Object(),
             i = 0,
@@ -59,60 +85,50 @@ $(document).ready(function () {
             }
             i++;
         }
-        if(allCost[0].value == "") {
+        if (min.value == "") {
             currentCost[0] = "0";
+        } else {
+            currentCost[0] = min.value;
         }
-        else {
-            currentCost[0] = allCost[0].value;
-        }
-        if(allCost[1].value == "") {
+        if (max.value == "") {
             currentCost[1] = "2147483646";
+        } else {
+            currentCost[1] = max.value;
         }
-        else {
-            currentCost[1] = allCost[1].value;
-        }
-        let arr = { Authors: checkedAuthors, Cost: currentCost };
-        $.ajax({
-            url: '/api/books/filter',
-            type: 'POST',
-            data: JSON.stringify(arr),
-            contentType: 'application/json; charset=utf-8',
-            dataType: 'json',
-            async: false,
-            success: function(books) {
-                $('#books').empty();
-                $('#books').html();
-                i = 0;
-                while (i < books.length) {
-                    $('#books').append(
-                        '<div class="col-md-4">' +
-                        '<div class="card mb-4 shadow-sm">' +
-                        '<img class="bd-placeholder-img card-img-top" src="' + books[i].firstImage + '" width="100%" height="225">' +
-                        '<div class="card-body">' +
-                        '<h6 class="mb-0">' + books[i].title + '</h6>' +
-                        '<div class="mb-1 text-muted">' + books[i].author.name + '</div>' +
-                        '<p class="card-text mb-auto">' + books[i].description + '</p>' +
-                        '<a class="stretched-link" href="/store/book/' + books[i].id + '}">Watch more</a>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>'
-                    );
-                    i++;
+        if (currentCost[1] < currentCost[0]) {
+            alert("That's an error");
+        } else {
+            let arr = {Authors: checkedAuthors, Cost: currentCost};
+            $.ajax({
+                url: '/api/books/filter',
+                type: 'POST',
+                data: JSON.stringify(arr),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                async: false,
+                success: function (books) {
+                    $('#books').empty();
+                    $('#books').html();
+                    i = 0;
+                    while (i < books.length) {
+                        $('#books').append(
+                            '<div class="col-md-2">' +
+                            '<div class="card mb-2 shadow-sm">' +
+                            '<img class="bd-placeholder-img card-img-top" src="' + books[i].firstImage + '" width="100%" >' +
+                            '<div class="card-body">' +
+                            '<h6 class="mb-0">' + books[i].title + '</h6>' +
+                            '<div class="mb-1 text-muted">' + books[i].author.name + '</div>' +
+                            '<p class="card-text mb-auto">' + books[i].cost + '$</p>' +
+                            '<a class="stretched-link" href="/store/book/' + books[i].id + '}">See details</a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>'
+                        );
+                        i++;
+                    }
                 }
-            }
-        });
-
-        /*$.getJSON('/api/books', function (books) {
-            let checked = false;
-                    for (j = 0; j < length; j++) {
-                        if (books[i].author.name == checkedAuthors[j]) {
-                            checked = true;
-                        }
-                    }
-                    if (checked) {
-
-                    }
-        });*/
+            });
+        }
     });
 
     $(".js-addBook").click(function () {

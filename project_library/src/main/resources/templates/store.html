@@ -20,15 +20,15 @@
         <div class="container">
             <div id="books" class="row">
                 <th:block th:each="book : ${books}">
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
+                    <div class="col-md-2">
+                        <div class="card mb-2 shadow-sm">
                             <img class="bd-placeholder-img card-img-top"
-                                 th:src="${book.getFirstImage()}" w+idth="100%" height="225">
+                                 th:src="${book.getFirstImage()}" width="100%" >
                             <div class="card-body">
                                 <h6 class="mb-0" th:text="${book.title}"/>
                                 <div class="mb-1 text-muted" th:text="${book.author.getName()}"/>
-                                <p class="card-text mb-auto" th:text="${book.getDescription()}"></p>
-                                <a class="stretched-link" th:href="@{'/store/book/' + ${book.id}}">Watch more</a>
+                                <p class="card-text mb-auto" th:text="${book.getCost()} + '$'"></p>
+                                <a class="stretched-link" th:href="@{'/store/book/' + ${book.id}}">See details</a>
                             </div>
                         </div>
                     </div>

@@ -44,8 +44,6 @@ public class APIController {
             }
         }
         List<Integer> costs = getCosts(filterText);
-        System.out.println(authorNames);
-        System.out.println(costs);
         List<Book> allBooks = bookService.getBooks();
         List<Book> currentBooks = new ArrayList<>();
         for (Book book: allBooks) {

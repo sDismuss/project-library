@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6349e26c-edd2-49ee-9eef-a65b337abff7" name="Default Changelist" comment="" />
+    <list default="true" id="6349e26c-edd2-49ee-9eef-a65b337abff7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/project_library/src/main/resources/static/js/someFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/project_library/src/main/resources/static/js/someFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_library/src/main/resources/templates/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/project_library/src/main/resources/templates/book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_library/src/main/resources/templates/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/project_library/src/main/resources/templates/store.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,14 +49,15 @@
       <option name="presentableId" value="Default" />
       <updated>1582151429949</updated>
       <workItem from="1582151453445" duration="24000" />
+      <workItem from="1584475074156" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="431" y="146" key="FileChooserDialogImpl" timestamp="1582151485199">
+    <state x="431" y="146" key="FileChooserDialogImpl" timestamp="1584475089634">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
-    <state x="431" y="146" key="FileChooserDialogImpl/0.0.1295.768@0.0.1295.768" timestamp="1582151485199" />
+    <state x="431" y="146" key="FileChooserDialogImpl/0.0.1295.768@0.0.1295.768" timestamp="1584475089634" />
     <state x="371" y="217" key="com.intellij.ide.util.TipDialog" timestamp="1582151452180">
       <screen x="0" y="0" width="1295" height="768" />
     </state>
