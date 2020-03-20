@@ -25,7 +25,7 @@ $(document).ready(function () {
                         }
                         content = content + '<div class="form-check">';
                         content = content + '<input type="checkbox" class="form-check-input" id="' + authors[i].name + '" name="authors" value="' + authors[i].name + '" />';
-                        content = content + '<label class="form-check-label" for="' + authors[i].name +'">' + authors[i].name + '</label>';
+                        content = content + '<label class="form-check-label" for="' + authors[i].name + '">' + authors[i].name + '</label>';
                         content = content + '</div>';
                         currAuthors.push(authors[i].name);
                         i++;
@@ -41,15 +41,15 @@ $(document).ready(function () {
                     content = content + '<div class="form-group row">';
                     content = content + '<label class="col-sm-1 col-form-label" for="min">Min</label>';
                     content = content + '<div class="col-sm-6">';
-                    content = content + '<input type="text" class="form-control is-invalid" name="min" id="min" value="">';
-                    content = content + '<div class="invalid-feedback">Looks good!</div>';
+                    content = content + '<input type="text" class="form-control" name="min" id="min" value="">';
+                    content = content + '<div class="invalid-feedback">Max less than min</div>';
                     content = content + '</div>';
                     content = content + '</div>';
                     content = content + '<div class="form-group row">';
                     content = content + '<label class="col-sm-1 col-form-label" for="max">Max</label>';
                     content = content + '<div class="col-sm-6">';
-                    content = content + '<input type="text" class="form-control is-invalid" name="max" id="max" value="">';
-                    content = content + '<div class="invalid-feedback">Looks good!</div>';
+                    content = content + '<input type="text" class="form-control" name="max" id="max" value="">';
+                    content = content + '<div class="invalid-feedback">Max less than min</div>';
                     content = content + '</div>';
                     content = content + '</div>';
                     content = content + '</div>';
@@ -60,6 +60,33 @@ $(document).ready(function () {
                     content = content + '<input type="reset" value="Reset">';
 
                     $('#filterForm').append(content);
+
+                    $('#min').blur(function () {
+                        alert("mimimimimi");
+                        let min = document.getElementById('filterForm').min,
+                            max = document.getElementById('filterForm').max;
+                        if (min.value != "" && max.value != "" && Number(min.value) > Number(max.value)) {
+                            $('#min').attr('class', 'form-control is-invalid');
+                            $('#submit').attr('disabled', 'disabled');
+                        } else {
+                            $('#min').attr('class', 'form-control');
+                            $('#max').attr('class', 'form-control');
+                            $('#submit').attr('disabled', false);
+                        }
+                    });
+                    $('#max').blur(function () {
+                        alert("mamamam");
+                        let min = document.getElementById('filterForm').min,
+                            max = document.getElementById('filterForm').max;
+                        if (max.value != "" && min.value != "" && Number(min.value) > Number(max.value)) {
+                            $('#max').attr('class', 'form-control is-invalid');
+                            $('#submit').attr('disabled', 'disabled');
+                        } else {
+                            $('#min').attr('class', 'form-control');
+                            $('#max').attr('class', 'form-control');
+                            $('#submit').attr('disabled', false);
+                        }
+                    });
                 });
             }
             $('#filter').attr("hidden", false);
@@ -212,61 +239,5 @@ $(document).ready(function () {
 });
 
 
-/* let books,
-             i = 0,
-             j = 0;
-         while (i < jd.length) {
-             books = books.add(authors[i].books);
-             i++;
-         }
-         $('#books').empty();
-         $('#books').html();
-         while (j < books.length) {
-             $('#books').append(
-                 '<div class="col-md-4">\\n\' +\n' +
-                 '            \'                        <div class="card mb-4 shadow-sm">\\n\' +\n' +
-                 '            \'                            <img class="bd-placeholder-img card-img-top"\\n\' +\n' +
-                 '            \'                                 th:src="${' + books[j].getFirstImage().getLink() + '} width="100%" height="225">\\n\' +\n' +
-                 '            \'                            <div class="card-body">\\n\' +\n' +
-                 '            \'                                <h6 class="mb-0" th:text="${' + books[j].title + '}" />\\n\' +\n' +
-                 '            \'                                <div class="mb-1 text-muted" th:text="${' + books[j].author.getName() + '}" />\\n\' +\n' +
-                 '            \'                                <p class="card-text mb-auto" th:text="${' + books[j].getDescription() + '}"></p>\\n\' +\n' +
-                 '            \'                                <a class="stretched-link" th:href="@{/store/book/' + books[j].id + '}">Watch more</a>\\n\' +\n' +
-             '            \'                            </div>\\n\' +\n' +
-             '            \'                        </div>\\n\' +\n' +
-             '            \'                    </div>\\n\'');
-         }*/
-
-
-/*    {
-            {
-
-
-                $.getJSON('/api/authors', function (jd) {
-                    let i = 0;
-                    while (i < jd.length) {
-                        $('#authors').append('<input type="checkbox" name="authors" value="' + jd[i].name + '" />' + jd[i].name + '<br />');
-                        i++;
-                    }
-                    $('#authors').append('</div>');
-                });
-            }
-            if($('#costs').is(':empty')) {
-                $('#costs').empty();
-                $('#costs').html('<p>Cost:</p>');
-                $.getJSON('/api/books', function(books) {
-                    let i = 0,
-                        min = 0,
-                        max = books[i].cost;
-                    while (i < books.length) {
-                        $('#costs').append('<input type="checkbox" name="costs" value="' + books[i].cost + '" />' + books[i].cost + '<br />');
-                        i++;
-                    }
-                });
-            }
-
-        }
-        else {
-
+/*
         }*/
-
