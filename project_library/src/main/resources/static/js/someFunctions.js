@@ -4,21 +4,22 @@ $(document).ready(function () {
         alert("hello");
     });
     $('#showFilter').click(function () {
-        if ($('#filter').attr("hidden") === "hidden") {
-            if ($('#filterForm').is(':empty')) {
+        let $1 = $('#filter'),
+            $2 = $('#filterForm');
+        if ($1.attr("hidden") === "hidden") {
+            if ($2.is(':empty')) {
                 $.getJSON('/api/authors', function (authors) {
                     let content = "",
-                        currAuthors = new Array(),
+                        currAuthors = [],
                         i = 0;
-                    $('#filterForm').empty();
-                    $('#filterForm').html();
+                    $2.empty();
                     content = content + '<fieldset class="form-group">';
                     content = content + '<div class="row">';
                     content = content + '<div class="col-sm-1">Authors</div>';
                     content = content + '<div class="col-sm-10">';
                     outer: while (i < authors.length) {
                         for (let j = 0; j < currAuthors.length; j++) {
-                            if (authors[i].name == currAuthors[j]) {
+                            if (authors[i].name === currAuthors[j]) {
                                 i++;
                                 break outer;
                             }
@@ -59,13 +60,12 @@ $(document).ready(function () {
                     content = content + '<input id="submit" type="submit" value="Submit">';
                     content = content + '<input type="reset" value="Reset">';
 
-                    $('#filterForm').append(content);
+                    $2.append(content);
 
                     $('#min').blur(function () {
-                        alert("mimimimimi");
                         let min = document.getElementById('filterForm').min,
                             max = document.getElementById('filterForm').max;
-                        if (min.value != "" && max.value != "" && Number(min.value) > Number(max.value)) {
+                        if (min.value !== "" && max.value !== "" && Number(min.value) > Number(max.value)) {
                             $('#min').attr('class', 'form-control is-invalid');
                             $('#submit').attr('disabled', 'disabled');
                         } else {
@@ -75,10 +75,9 @@ $(document).ready(function () {
                         }
                     });
                     $('#max').blur(function () {
-                        alert("mamamam");
                         let min = document.getElementById('filterForm').min,
                             max = document.getElementById('filterForm').max;
-                        if (max.value != "" && min.value != "" && Number(min.value) > Number(max.value)) {
+                        if (max.value !== "" && min.value !== "" && Number(min.value) > Number(max.value)) {
                             $('#max').attr('class', 'form-control is-invalid');
                             $('#submit').attr('disabled', 'disabled');
                         } else {
@@ -89,9 +88,9 @@ $(document).ready(function () {
                     });
                 });
             }
-            $('#filter').attr("hidden", false);
+            $1.attr("hidden", false);
         } else {
-            $('#filter').attr("hidden", true);
+            $1.attr("hidden", true);
         }
     });
 
@@ -100,24 +99,24 @@ $(document).ready(function () {
         let allAuthors = document.getElementById('filterForm').authors,
             min = document.getElementById('filterForm').min,
             max = document.getElementById('filterForm').max,
-            currentCost = new Object(),
-            checkedAuthors = new Object(),
+            currentCost = {},
+            checkedAuthors = {},
             i = 0,
             j = 0,
             length = 0;
         while (i < allAuthors.length) {
-            if (allAuthors[i].checked == true) {
+            if (allAuthors[i].checked === true) {
                 checkedAuthors[length] = allAuthors[i].value;
                 length++;
             }
             i++;
         }
-        if (min.value == "") {
+        if (min.value === "") {
             currentCost[0] = "0";
         } else {
             currentCost[0] = min.value;
         }
-        if (max.value == "") {
+        if (max.value === "") {
             currentCost[1] = "2147483646";
         } else {
             currentCost[1] = max.value;
@@ -135,7 +134,6 @@ $(document).ready(function () {
                 async: false,
                 success: function (books) {
                     $('#books').empty();
-                    $('#books').html();
                     i = 0;
                     while (i < books.length) {
                         $('#books').append(
@@ -173,17 +171,19 @@ $(document).ready(function () {
 
         request.done(function () {
             if (jd) {
-                $("#addButton" + id).data("quantity", quantity);
-                $("#addButton" + id).data("total-cost", totalCost);
-                $("#addButton" + id).data("all-total", allTotal);
-                $("#deleteButton" + id).data("quantity", quantity);
-                $("#deleteButton" + id).data("total-cost", totalCost);
-                $("#deleteButton" + id).data("all-total", allTotal);
+                let $1 = $("#addButton" + id);
+                $1.data("quantity", quantity);
+                $1.data("total-cost", totalCost);
+                $1.data("all-total", allTotal);
+                let $2 = $("#deleteButton" + id);
+                $2.data("quantity", quantity);
+                $2.data("total-cost", totalCost);
+                $2.data("all-total", allTotal);
                 $("#quantity" + id).html(quantity);
                 $("#cost" + id).html(totalCost);
                 $("#total").html(allTotal);
                 if (quantity > 1) {
-                    $("#deleteButton" + id).attr("disabled", false);
+                    $2.attr("disabled", false);
                 }
             } else alert("Ou...That's an ERROR!!")
         });
@@ -208,17 +208,19 @@ $(document).ready(function () {
 
         request.done(function () {
             if (jd) {
-                $("#addButton" + id).data("quantity", quantity);
-                $("#addButton" + id).data("total-cost", totalCost);
-                $("#addButton" + id).data("all-total", allTotal);
-                $("#deleteButton" + id).data("quantity", quantity);
-                $("#deleteButton" + id).data("total-cost", totalCost);
-                $("#deleteButton" + id).data("all-total", allTotal);
+                let $1 = $("#addButton" + id);
+                $1.data("quantity", quantity);
+                $1.data("total-cost", totalCost);
+                $1.data("all-total", allTotal);
+                let $2 = $("#deleteButton" + id);
+                $2.data("quantity", quantity);
+                $2.data("total-cost", totalCost);
+                $2.data("all-total", allTotal);
                 $("#quantity" + id).html(quantity);
                 $("#cost" + id).html(totalCost);
                 $("#total").html(allTotal);
                 if (quantity === 1) {
-                    $("#deleteButton" + id).attr("disabled", true);
+                    $2.attr("disabled", true);
                 }
             } else alert("Ou...That's an ERROR!!")
         });
@@ -237,7 +239,3 @@ $(document).ready(function () {
         });
     }
 });
-
-
-/*
-        }*/
