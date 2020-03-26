@@ -2,6 +2,7 @@ package com.netcracker.service;
 
 import com.netcracker.model.Cart;
 import com.netcracker.model.CartItem;
+import com.netcracker.repository.CartItemRepository;
 import com.netcracker.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class CartService {
     @Autowired
     private CartRepository cartRepository;
     @Autowired
-    private CartService cartService;
+    private CartItemRepository cartItemRepository;
     @Autowired
     private MyUserDetailsService myUserDetailsService;
     @Autowired
@@ -54,7 +55,16 @@ public class CartService {
     public Cart getCurrentCart() {
         String currUsername = myUserDetailsService.getCurrentUsername();
         Integer currUserId = userService.findByUsername(currUsername).getId();
-        Cart cart = cartService.findByUserID(Integer.toString(currUserId));
+        Cart cart = findByUserID(Integer.toString(currUserId));
         return cart;
+    }
+
+    public void deleteAll() {
+        List<CartItem> cartItems = cartItemRepository.findAll();
+        for (CartItem cartItem: cartItems) {
+            if(cartItem.getCart().getId() == getCurrentCart().getId()) {
+                cartItemRepository.delete(cartItem);
+            }
+        }
     }
 }

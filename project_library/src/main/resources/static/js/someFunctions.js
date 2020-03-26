@@ -99,32 +99,33 @@ $(document).ready(function () {
         let allAuthors = document.getElementById('filterForm').authors,
             min = document.getElementById('filterForm').min,
             max = document.getElementById('filterForm').max,
-            currentCost = {},
-            checkedAuthors = {},
+            currentMin = 0,
+            currentMax = 0,
+            checkedAuthors = [],
             i = 0,
             j = 0,
             length = 0;
         while (i < allAuthors.length) {
             if (allAuthors[i].checked === true) {
-                checkedAuthors[length] = allAuthors[i].value;
+                checkedAuthors.push(allAuthors[i].value);
                 length++;
             }
             i++;
         }
         if (min.value === "") {
-            currentCost[0] = "0";
+            currentMin = "0";
         } else {
-            currentCost[0] = min.value;
+            currentMin = min.value;
         }
         if (max.value === "") {
-            currentCost[1] = "2147483646";
+            currentMax = "2147483646";
         } else {
-            currentCost[1] = max.value;
+            currentMax = max.value;
         }
-        if (currentCost[1] < currentCost[0]) {
+        if (currentMax < currentMin) {
             alert("That's an error");
         } else {
-            let arr = {Authors: checkedAuthors, Cost: currentCost};
+            let arr = {authors: checkedAuthors, min: currentMin, max: currentMax};
             $.ajax({
                 url: '/api/books/filter',
                 type: 'POST',
@@ -144,7 +145,7 @@ $(document).ready(function () {
                             '<h6 class="mb-0">' + books[i].title + '</h6>' +
                             '<div class="mb-1 text-muted">' + books[i].author.name + '</div>' +
                             '<p class="card-text mb-auto">' + books[i].cost + '$</p>' +
-                            '<a class="stretched-link" href="/store/book/' + books[i].id + '}">See details</a>' +
+                            '<a class="stretched-link" href="/store/book/' + books[i].id + '">See details</a>' +
                             '</div>' +
                             '</div>' +
                             '</div>'
@@ -232,7 +233,7 @@ $(document).ready(function () {
 
     if ($('[id^="deleteButton"]').length > 0) {
         $('[id^="deleteButton"]').each(function () {
-            if ($(this).data("quantity") == 1) {
+            if ($(this).data("quantity") === 1) {
                 let id = $(this).data("id");
                 $("#deleteButton" + id).attr("disabled", true);
             }

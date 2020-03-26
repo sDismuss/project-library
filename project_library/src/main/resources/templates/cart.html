@@ -2,20 +2,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Buy books on Daedalus</title>
-    <th:block th:insert="fragments/settings :: head" />
+    <th:block th:insert="fragments/settings :: head"/>
     <link rel="stylesheet" type="text/css" href="/css/cartStyle.css">
 </head>
 <body>
-<header th:insert="fragments/header :: header" > </header>
+<header th:insert="fragments/header :: header"></header>
 <main role="main">
     <div class="container">
         <h4 class="mb-3">YOUR SHOPPING CART</h4>
+        <div class="mb-1 text-muted">
+            <a class="text-muted"
+               th:href="@{'/cart/delete'}">Delete all</a>
+        </div>
+        <p></p>
         <th:block class="itemID" th:each="cartItem: ${cartItems}">
-            <div id ="" class="container">
+            <div id="" class="container">
                 <div class="row border-bottom border-gray js-cartItem">
                     <div class="col-md-6 order-md-1">
                         <h6>
-                            <a th:href="'/store/book/' + ${cartItem.getBook().getId()}" th:text="${cartItem.getBook().getTitle()}"/>
+                            <a th:href="'/store/book/' + ${cartItem.getBook().getId()}"
+                               th:text="${cartItem.getBook().getTitle()}"/>
                         </h6>
                         <span>
                             <a class="text-muted"

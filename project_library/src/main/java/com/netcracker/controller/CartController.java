@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -36,6 +37,12 @@ public class CartController {
         Boolean logIn = userService.userLogIn();
         model.addAttribute("logIn", logIn);
         return "cart";
+    }
+
+    @GetMapping("/cart/delete")
+    public String deleteAll() {
+        cartService.deleteAll();
+        return "transitionToCart";
     }
 
     @RequestMapping("/cart/add/{id}")
